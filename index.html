@@ -3,30 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arzware — Creative Agency</title>
-  <link rel="icon" type="image/png" href="AR_logo_transparent_dark.png" />
   <meta name="description" content="Arzware is an AI-native software studio building websites, apps, dashboards, automations, CRM-lite systems and business workflows for small and growing companies." />
+  <title>Arzware — Business Systems for Small Teams</title>
+  <link rel="icon" type="image/png" href="AR_logo_transparent_dark.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#050608;
-      --bg-2:#0a0d12;
-      --ink:#f6f1e8;
-      --muted:#a99f91;
-      --soft:#d8cebd;
-      --line:rgba(246,241,232,.13);
-      --line-strong:rgba(246,241,232,.24);
-      --card:rgba(255,255,255,.045);
-      --card-2:rgba(255,255,255,.075);
-      --amber:#d69a45;
-      --blue:#57b8ff;
-      --cyan:#78f1ff;
-      --green:#8cffc4;
-      --danger:#ff7b7b;
+      --bg:#04070b;
+      --bg-2:#07101a;
+      --ink:#f7f2ea;
+      --soft:#d9d0c2;
+      --muted:#b8ad9f;
+      --faint:#746d63;
+      --line:rgba(247,242,234,.13);
+      --line-strong:rgba(247,242,234,.24);
+      --card:rgba(255,255,255,.052);
+      --card-2:rgba(255,255,255,.085);
+      --blue:#63bcff;
+      --cyan:#74efff;
+      --amber:#d99b4a;
+      --green:#89f5bd;
+      --red:#ff8a8a;
       --radius:28px;
-      --shadow:0 30px 90px rgba(0,0,0,.55);
+      --shadow:0 32px 110px rgba(0,0,0,.56);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;background:var(--bg)}
@@ -35,121 +36,214 @@
       font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(circle at 72% 8%, rgba(87,184,255,.22), transparent 24rem),
-        radial-gradient(circle at 12% 18%, rgba(214,154,69,.16), transparent 24rem),
-        linear-gradient(180deg,#050608 0%, #090b10 45%, #030405 100%);
+        radial-gradient(circle at 74% 4%, rgba(99,188,255,.20), transparent 28rem),
+        radial-gradient(circle at 12% 16%, rgba(217,155,74,.15), transparent 26rem),
+        radial-gradient(circle at 58% 54%, rgba(116,239,255,.08), transparent 34rem),
+        linear-gradient(180deg,#04070b 0%, #08101a 46%, #030506 100%);
       overflow-x:hidden;
     }
-    body:before{
-      content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.32;
-      background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-      background-size:64px 64px;
-      mask-image:linear-gradient(to bottom,black,transparent 90%);
-    }
-    body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22256%22 height=%22256%22 filter=%22url(%23n)%22 opacity=%220.48%22/%3E%3C/svg%3E');opacity:.055;mix-blend-mode:screen}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.26;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.033) 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(to bottom,black,transparent 88%)}
+    body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22256%22 height=%22256%22 filter=%22url(%23n)%22 opacity=%220.48%22/%3E%3C/svg%3E');opacity:.052;mix-blend-mode:screen}
     a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
     .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
-    .nav{position:sticky;top:14px;z-index:20;margin:14px auto 0;width:min(1220px,calc(100% - 28px));display:flex;align-items:center;justify-content:space-between;padding:12px;border:1px solid var(--line);border-radius:999px;background:rgba(5,6,8,.72);backdrop-filter:blur(18px);box-shadow:0 12px 40px rgba(0,0,0,.25)}
-    .brand{display:flex;align-items:center;gap:12px;padding-left:8px}
-    .brand-mark{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(87,184,255,.22),rgba(214,154,69,.18));border:1px solid var(--line-strong);font-family:Playfair Display,serif;font-weight:800;color:var(--ink)}
-    .brand-name{font-family:Playfair Display,serif;font-weight:800;font-size:23px;letter-spacing:.02em}
-    .nav-links{display:flex;gap:18px;color:var(--muted);font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
-    .nav-links a:hover{color:var(--ink)}
-    .nav-cta{border:1px solid rgba(214,154,69,.45);background:rgba(214,154,69,.1);padding:12px 17px;border-radius:999px;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;color:#ffe1b0}
-    .hero{min-height:82vh;display:grid;align-items:center;padding:54px 0 28px;position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-    .eyebrow{font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--amber);display:flex;gap:10px;align-items:center;margin-bottom:22px}.eyebrow:before{content:"";width:34px;height:1px;background:var(--amber)}
-    h1{font-family:Playfair Display,Georgia,serif;font-size:clamp(54px,7.4vw,112px);line-height:.9;margin:0 0 26px;letter-spacing:-.055em}.blue{color:#a8dcff}.amber{color:#ffd493}
-    .lead{font-size:clamp(18px,2vw,23px);line-height:1.55;color:var(--soft);max-width:720px;margin:0 0 30px}.lead strong{color:var(--ink);font-weight:700}
-    .actions{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0}.btn{min-height:50px;border-radius:999px;padding:15px 22px;display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line-strong);font-weight:700}.btn.primary{background:var(--ink);color:#050608;border-color:var(--ink)}.btn.secondary{background:rgba(255,255,255,.04);color:var(--ink)}.btn:hover{transform:translateY(-2px);transition:.2s ease}.micro{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.micro div{border-top:1px solid var(--line);padding-top:14px}.micro span{display:block;font-family:JetBrains Mono,monospace;font-size:11px;color:var(--muted);text-transform:uppercase}.micro b{display:block;margin-top:6px;font-size:15px;color:var(--soft)}
-    .system-orb{position:relative;height:min(660px,78vh);min-height:540px;border:1px solid rgba(246,241,232,.14);border-radius:42px;background:radial-gradient(circle at 58% 42%,rgba(120,241,255,.18),transparent 22%),radial-gradient(circle at 28% 72%,rgba(214,154,69,.13),transparent 18%),linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.02));box-shadow:var(--shadow),0 0 120px rgba(87,184,255,.08);overflow:hidden;perspective:1200px;transform-style:preserve-3d}.system-orb:before{content:"ARZWARE // SYSTEM CORE";position:absolute;top:18px;left:22px;font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);z-index:7}.system-orb:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0 48%,rgba(120,241,255,.09) 49% 51%,transparent 52%),linear-gradient(transparent 0 48%,rgba(120,241,255,.07) 49% 51%,transparent 52%);background-size:72px 72px;mask-image:radial-gradient(circle at 50% 48%,black,transparent 68%);opacity:.5;z-index:0}.depth-grid{position:absolute;inset:13% 7% 11%;border:1px solid rgba(246,241,232,.1);border-radius:50%;transform:rotateX(72deg) translateZ(-90px);background:repeating-radial-gradient(circle,rgba(120,241,255,.13) 0 1px,transparent 2px 36px);filter:blur(.2px);opacity:.62}.core-wrap{position:absolute;inset:11% 7% 13%;transform-style:preserve-3d;animation:floatCore 7s ease-in-out infinite;z-index:3}.ai-core{position:absolute;top:50%;left:50%;width:218px;height:218px;transform:translate(-50%,-50%) rotateX(-11deg) rotateY(18deg);border-radius:44% 56% 48% 52%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 34% 26%,rgba(255,255,255,.58),rgba(120,241,255,.2) 18%,rgba(16,34,48,.76) 48%,rgba(3,5,8,.92) 76%),linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.02));border:1px solid rgba(246,241,232,.3);box-shadow:inset -28px -34px 72px rgba(0,0,0,.62),inset 18px 18px 42px rgba(255,255,255,.08),0 0 46px rgba(120,241,255,.28),0 0 130px rgba(87,184,255,.18);font-family:Playfair Display,serif;font-size:62px;font-weight:800;letter-spacing:-.08em}.ai-core:before{content:"";position:absolute;inset:17%;border-radius:inherit;border:1px solid rgba(120,241,255,.26);box-shadow:0 0 42px rgba(120,241,255,.24) inset;filter:blur(.2px)}.ai-core:after{content:"OPS";position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-family:JetBrains Mono,monospace;font-size:10px;letter-spacing:.26em;color:rgba(246,241,232,.64)}.ring{position:absolute;top:50%;left:50%;width:390px;height:390px;margin:-195px;border:1px solid rgba(120,241,255,.25);border-radius:50%;transform-style:preserve-3d;box-shadow:0 0 38px rgba(120,241,255,.12);animation:systemSpin 18s linear infinite}.ring.r1{transform:rotateX(70deg) rotateZ(-16deg)}.ring.r2{width:470px;height:470px;margin:-235px;border-color:rgba(214,154,69,.2);animation-duration:24s;animation-direction:reverse;transform:rotateX(64deg) rotateY(24deg) rotateZ(26deg)}.ring.r3{width:300px;height:300px;margin:-150px;border-color:rgba(246,241,232,.16);animation-duration:13s;transform:rotateX(18deg) rotateY(70deg) rotateZ(10deg)}.ring:before,.ring:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 26px var(--cyan);top:50%;left:-6px}.ring:after{left:auto;right:-6px;background:var(--amber);box-shadow:0 0 24px var(--amber)}.connector{position:absolute;top:50%;left:50%;width:1px;height:210px;transform-origin:0 0;background:linear-gradient(rgba(120,241,255,.54),transparent);opacity:.58}.connector.c1{transform:rotate(38deg)}.connector.c2{transform:rotate(132deg);height:245px;background:linear-gradient(rgba(214,154,69,.5),transparent)}.connector.c3{transform:rotate(238deg);height:230px}.node{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--cyan);box-shadow:0 0 24px var(--cyan);z-index:4}.node.n1{top:22%;left:48%}.node.n2{bottom:26%;right:18%;background:var(--amber);box-shadow:0 0 24px var(--amber)}.node.n3{bottom:20%;left:24%;background:var(--green);box-shadow:0 0 24px var(--green)}.particle{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(120,241,255,.88);box-shadow:0 0 16px rgba(120,241,255,.8);animation:drift 8s ease-in-out infinite;z-index:2}.p1{top:30%;left:22%;animation-delay:-1s}.p2{top:18%;right:24%;animation-delay:-3s;background:rgba(214,154,69,.9);box-shadow:0 0 16px rgba(214,154,69,.75)}.p3{bottom:24%;left:41%;animation-delay:-5s}.p4{bottom:38%;right:13%;animation-delay:-2s}.data-stream{position:absolute;top:78px;left:28px;right:28px;height:28px;display:flex;gap:8px;opacity:.6;z-index:1}.data-stream span{height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(120,241,255,.8),transparent);animation:dataPulse 2.4s ease-in-out infinite}.data-stream span:nth-child(2){animation-delay:.3s}.data-stream span:nth-child(3){animation-delay:.6s}.floating-card{position:absolute;width:190px;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(8,10,14,.76);backdrop-filter:blur(14px);box-shadow:0 18px 40px rgba(0,0,0,.34);z-index:6}.floating-card span{font-family:JetBrains Mono,monospace;font-size:10px;color:var(--amber);text-transform:uppercase}.floating-card b{display:block;margin-top:7px;font-size:14px}.fc1{top:116px;right:38px}.fc2{bottom:94px;left:34px}.fc3{right:32px;bottom:174px}.code-panel{position:absolute;left:26px;right:26px;bottom:25px;border:1px solid var(--line);background:rgba(0,0,0,.35);border-radius:20px;padding:18px;font-family:JetBrains Mono,monospace;font-size:12px;color:#c8eaff;z-index:8}.code-panel i{color:var(--muted);font-style:normal}.caret{display:inline-block;width:8px;height:14px;background:var(--cyan);vertical-align:-2px;animation:blink 1s steps(1) infinite}
-
-    section{padding:95px 0}.section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:40px;margin-bottom:36px;border-top:1px solid var(--line);padding-top:28px}.kicker{font-family:JetBrains Mono,monospace;color:var(--amber);text-transform:uppercase;font-size:12px;letter-spacing:.15em}.section-head h2{font-family:Playfair Display,serif;font-size:clamp(36px,5vw,72px);line-height:.94;letter-spacing:-.04em;margin:0}.section-head p{color:var(--soft);font-size:19px;line-height:1.6;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.025));border-radius:var(--radius);padding:26px;min-height:260px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(87,184,255,.13),transparent 45%);opacity:0;transition:.25s}.card:hover:before{opacity:1}.card small{font-family:JetBrains Mono,monospace;color:var(--amber);text-transform:uppercase}.card h3{font-size:25px;margin:56px 0 14px}.card p{color:var(--muted);line-height:1.6;margin:0}.card.wide{grid-column:span 2}.inverse{background:var(--ink);color:#090b10;border-radius:42px;padding:70px 0}.inverse .kicker{color:#83591e}.inverse .section-head{border-top-color:rgba(0,0,0,.16)}.inverse .section-head p{color:#4c453d}.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{background:#090b10;color:var(--ink);border-radius:24px;padding:22px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}.step span{font-family:JetBrains Mono,monospace;color:var(--amber);font-size:12px}.step h3{margin:0;font-size:21px}.step p{color:#a99f91;line-height:1.5;margin:0}.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{border:1px solid var(--line);border-radius:34px;padding:34px;background:rgba(255,255,255,.045)}.panel h3{font-family:Playfair Display,serif;font-size:42px;line-height:1;margin:0 0 18px}.panel p,.panel li{color:var(--soft);line-height:1.65}.panel ul{padding-left:18px}.manifesto{font-family:Playfair Display,serif;font-size:clamp(38px,6.3vw,96px);line-height:1;letter-spacing:-.05em;max-width:1050px;margin:0}.manifesto em{color:var(--amber);font-style:italic}.ticker{border-block:1px solid var(--line);padding:18px 0;overflow:hidden;white-space:nowrap;color:var(--muted);font-family:JetBrains Mono,monospace;text-transform:uppercase;font-size:12px;letter-spacing:.12em}.ticker span{display:inline-block;animation:marquee 28s linear infinite}.footer{padding:70px 0 44px}.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:end}.footer h2{font-family:Playfair Display,serif;font-size:clamp(46px,7vw,100px);line-height:.9;margin:0}.footer p{color:var(--soft);font-size:18px;line-height:1.6}.reveal{opacity:1;transform:none;transition:.7s cubic-bezier(.2,.8,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}
-    @keyframes systemSpin{to{rotate:360deg}}@keyframes floatCore{0%,100%{transform:translateY(0) rotateX(0deg)}50%{transform:translateY(-14px) rotateX(2deg)}}@keyframes dataPulse{0%,100%{opacity:.2;transform:scaleX(.65)}50%{opacity:1;transform:scaleX(1)}}@keyframes drift{0%,100%{transform:translate3d(0,0,0);opacity:.3}50%{transform:translate3d(18px,-24px,60px);opacity:1}}@keyframes pulse{50%{transform:scale(1.05);opacity:.65}}@keyframes blink{50%{opacity:0}}@keyframes marquee{to{transform:translateX(-50%)}}
-    @media (max-width:900px){.nav-links{display:none}.hero-grid,.section-head,.split,.footer-grid{grid-template-columns:1fr}.system-orb{min-height:480px}.cards{grid-template-columns:1fr}.card.wide{grid-column:auto}.pipeline{grid-template-columns:1fr}.micro{grid-template-columns:1fr}.floating-card{display:none}section{padding:70px 0}h1{font-size:58px}.nav{border-radius:26px}.brand-name{font-size:20px}}
+    .nav{position:sticky;top:14px;z-index:30;margin:14px auto 0;width:min(1220px,calc(100% - 28px));display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px;border:1px solid var(--line);border-radius:999px;background:rgba(4,7,11,.76);backdrop-filter:blur(20px);box-shadow:0 12px 44px rgba(0,0,0,.28)}
+    .brand{display:flex;align-items:center;gap:12px;padding-left:8px;min-width:max-content}.brand-logo{width:36px;height:36px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 0 18px rgba(116,239,255,.14))}.brand-mark{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(99,188,255,.24),rgba(217,155,74,.18));border:1px solid var(--line-strong);font-family:Playfair Display,serif;font-weight:800;color:var(--ink)}.brand-name{font-family:Playfair Display,serif;font-weight:800;font-size:24px;letter-spacing:.01em}
+    .nav-links{display:flex;gap:18px;color:var(--muted);font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.065em}.nav-links a:hover{color:var(--ink)}
+    .nav-cta{border:1px solid rgba(217,155,74,.48);background:rgba(217,155,74,.12);padding:12px 17px;border-radius:999px;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;color:#ffe0ab;min-width:max-content}.nav-cta:hover{background:rgba(217,155,74,.18)}
+    .hero{min-height:86vh;display:grid;align-items:center;padding:62px 0 42px}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}.eyebrow{font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--amber);display:flex;gap:10px;align-items:center;margin-bottom:22px}.eyebrow:before{content:"";width:34px;height:1px;background:var(--amber)}
+    h1{font-family:Playfair Display,Georgia,serif;font-size:clamp(48px,6.2vw,96px);line-height:.95;margin:0 0 26px;letter-spacing:-.055em;text-wrap:pretty}.blue{color:#a8ddff}.amber{color:#ffd493}.lead{font-size:clamp(18px,1.75vw,21px);line-height:1.58;color:var(--soft);max-width:760px;margin:0}.lead strong{color:var(--ink);font-weight:700}.actions{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0}.btn{min-height:52px;border-radius:999px;padding:15px 22px;display:inline-flex;gap:10px;align-items:center;justify-content:center;border:1px solid var(--line-strong);font-weight:800;transition:.2s ease}.btn.primary{background:var(--ink);color:#050608;border-color:var(--ink)}.btn.secondary{background:rgba(255,255,255,.045);color:var(--ink)}.btn.ghost{background:transparent;color:var(--soft)}.btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(0,0,0,.22)}
+    .hero-note{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.hero-note div{border-top:1px solid var(--line);padding-top:14px}.hero-note span{display:block;font-family:JetBrains Mono,monospace;font-size:11px;color:var(--muted);text-transform:uppercase}.hero-note b{display:block;margin-top:6px;font-size:15px;color:var(--soft)}
+    .flow-visual{position:relative;min-height:620px;border:1px solid rgba(247,242,234,.14);border-radius:42px;background:radial-gradient(circle at 50% 20%,rgba(116,239,255,.16),transparent 24%),linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:var(--shadow),0 0 120px rgba(99,188,255,.08);overflow:hidden;padding:26px}.flow-visual:before{content:"CHAOS → SYSTEM";position:absolute;top:18px;left:24px;font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.18em;color:var(--muted);z-index:4}.flow-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0 49%,rgba(116,239,255,.08) 50%,transparent 51%),linear-gradient(transparent 0 49%,rgba(116,239,255,.06) 50%,transparent 51%);background-size:70px 70px;mask-image:radial-gradient(circle at 50% 48%,black,transparent 72%);opacity:.52}.flow-columns{position:relative;z-index:2;display:grid;grid-template-columns:1fr 44px 1fr;gap:12px;height:100%;padding-top:46px}.flow-stack{display:flex;flex-direction:column;gap:12px;justify-content:center}.flow-label{font-family:JetBrains Mono,monospace;color:var(--amber);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}.mini-card{border:1px solid var(--line);border-radius:18px;background:rgba(4,7,11,.66);backdrop-filter:blur(14px);padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.24)}.mini-card.danger{border-color:rgba(255,138,138,.24);background:rgba(255,138,138,.055)}.mini-card.good{border-color:rgba(116,239,255,.26);background:rgba(116,239,255,.065)}.mini-card small{display:block;font-family:JetBrains Mono,monospace;font-size:10px;color:var(--muted);text-transform:uppercase}.mini-card b{display:block;margin-top:7px;font-size:14px;line-height:1.35}.arrow-rail{display:grid;place-items:center}.arrow-core{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#050608;font-weight:900;box-shadow:0 0 46px rgba(116,239,255,.22);animation:breathe 4s ease-in-out infinite}.dashboard{border:1px solid rgba(247,242,234,.18);border-radius:24px;background:rgba(7,16,26,.78);padding:16px;margin-top:10px}.dash-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:14px}.pill{font-family:JetBrains Mono,monospace;font-size:10px;color:var(--green);border:1px solid rgba(137,245,189,.26);border-radius:999px;padding:6px 9px;background:rgba(137,245,189,.07)}.bar{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin:10px 0}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--blue));border-radius:999px}.stage-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px 0;border-top:1px solid var(--line);color:var(--soft);font-size:13px}.stage-row:first-of-type{border-top:0}.node-glow{position:absolute;width:230px;height:230px;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(116,239,255,.15),transparent 68%);filter:blur(10px);animation:float 7s ease-in-out infinite;z-index:1}
+    .strip{border-block:1px solid var(--line);background:rgba(255,255,255,.026)}.trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0}.trust-item{padding:22px 20px;border-left:1px solid var(--line)}.trust-item:first-child{border-left:0}.trust-item b{display:block;font-size:15px;margin-bottom:6px}.trust-item span{display:block;color:var(--muted);font-size:13px;line-height:1.5}.section-cta{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.04);padding:18px 20px}.section-cta b{display:block;font-size:18px}.section-cta span{display:block;color:var(--muted);margin-top:4px;line-height:1.45}.inverse .section-cta{background:rgba(8,16,26,.08);border-color:rgba(0,0,0,.16)}
+    section{padding:95px 0}.section-head{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;margin-bottom:36px;border-top:1px solid var(--line);padding-top:28px}.kicker{font-family:JetBrains Mono,monospace;color:var(--amber);text-transform:uppercase;font-size:12px;letter-spacing:.15em}.section-head h2{font-family:Playfair Display,serif;font-size:clamp(36px,5vw,72px);line-height:.95;letter-spacing:-.045em;margin:0;text-wrap:pretty}.section-head p{color:var(--soft);font-size:19px;line-height:1.62;margin:0}.grid{display:grid;gap:16px}.grid.three{grid-template-columns:repeat(3,1fr)}.grid.two{grid-template-columns:repeat(2,1fr)}.grid.six{grid-template-columns:repeat(3,1fr)}
+    .card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.064),rgba(255,255,255,.025));border-radius:var(--radius);padding:26px;position:relative;overflow:hidden;min-height:230px}.card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 0%,rgba(99,188,255,.13),transparent 46%);opacity:0;transition:.25s}.card:hover:before{opacity:1}.card > *{position:relative;z-index:1}.card small,.offer-meta{font-family:JetBrains Mono,monospace;color:var(--amber);text-transform:uppercase;font-size:11px;letter-spacing:.08em}.card h3{font-size:25px;margin:34px 0 14px;line-height:1.08}.card p{color:#c3b9aa;line-height:1.64;margin:0}.card ul{margin:18px 0 0;padding-left:18px;color:var(--soft);line-height:1.72}.icon{width:36px;height:36px;border-radius:14px;display:grid;place-items:center;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--cyan);font-family:JetBrains Mono,monospace;font-size:13px}.problem-card{min-height:198px}.problem-card h3{margin-top:22px}.offer-card{min-height:330px}.offer-card h3{margin-top:24px}.offer-detail{display:grid;gap:11px;margin-top:20px}.offer-detail div{border-top:1px solid var(--line);padding-top:11px}.offer-detail b{display:block;font-size:13px;margin-bottom:4px}.offer-detail span{display:block;color:#c3b9aa;font-size:14px;line-height:1.5}
+    .inverse{background:var(--ink);color:#070b10;border-radius:42px;padding:82px 0;margin:20px 0}.inverse .section-head{border-top-color:rgba(0,0,0,.18)}.inverse .kicker{color:#80561f}.inverse .section-head p{color:#4f473e}.inverse-card{background:#08101a;color:var(--ink);border-color:rgba(0,0,0,.12)}.inverse-card p{color:#a99f91}.inverse-card ul{color:#d9d0c2}.inverse-card:before{background:radial-gradient(circle at 80% 0%,rgba(217,155,74,.16),transparent 48%)}
+    .case-card{min-height:430px;display:flex;flex-direction:column}.case-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.case-card h3{margin:18px 0 12px;font-size:28px}.case-for{color:var(--soft);font-size:15px;line-height:1.55;margin-bottom:18px}.case-list{display:grid;gap:9px;margin-top:auto}.case-list span{display:flex;align-items:center;gap:9px;color:var(--soft);font-size:14px}.case-list span:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px var(--cyan)}.mock{border:1px solid var(--line);border-radius:20px;background:rgba(0,0,0,.22);padding:12px;margin:18px 0}.mock-line{height:8px;border-radius:999px;background:rgba(255,255,255,.09);margin:9px 0}.mock-line:nth-child(2){width:78%}.mock-line:nth-child(3){width:58%;background:rgba(116,239,255,.22)}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}.process-step{min-height:260px}.process-step:after{counter-increment:step;content:"0" counter(step);position:absolute;right:22px;top:20px;font-family:JetBrains Mono,monospace;color:rgba(247,242,234,.18);font-size:34px;font-weight:800}.risk-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.risk-panel{border:1px solid var(--line);border-radius:34px;background:rgba(255,255,255,.045);padding:34px}.risk-list{display:grid;gap:14px}.risk-item{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:16px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.035)}.risk-item b{display:block;margin-bottom:5px}.risk-item p{margin:0;color:var(--muted);line-height:1.55}.quality-badge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(137,245,189,.1);border:1px solid rgba(137,245,189,.26);color:var(--green);font-weight:900}
+    .talent-box{display:grid;grid-template-columns:.95fr 1.05fr;gap:16px}.talent-lead{border:1px solid var(--line);border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));padding:34px}.talent-lead h3{font-family:Playfair Display,serif;font-size:46px;line-height:1;margin:0 0 18px;letter-spacing:-.035em}.talent-lead p{color:var(--soft);line-height:1.65;margin:0}.talent-points{display:grid;gap:12px}.talent-points .risk-item{min-height:118px}
+    .contact-shell{border:1px solid var(--line);border-radius:42px;background:radial-gradient(circle at 76% 22%,rgba(116,239,255,.13),transparent 28%),linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.03));box-shadow:var(--shadow);padding:34px}.contact-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:26px;align-items:start}.contact-copy h2{font-family:Playfair Display,serif;font-size:clamp(44px,6vw,88px);line-height:.92;letter-spacing:-.055em;margin:14px 0 22px}.contact-copy p{color:var(--soft);font-size:18px;line-height:1.65}.form{display:grid;gap:13px}.field{display:grid;gap:7px}.field label{font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.24);color:var(--ink);padding:14px 15px;outline:none}.field textarea{min-height:122px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(116,239,255,.55);box-shadow:0 0 0 4px rgba(116,239,255,.08)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-note{color:#bfb4a6;font-size:13px;line-height:1.55;margin:0}.form .btn{cursor:pointer;width:100%;margin-top:4px}.footer{padding:48px 0 36px}.footer-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;border-top:1px solid var(--line);padding-top:24px}.footer p{margin:8px 0 0;color:var(--muted);line-height:1.55}.footer-links{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.065em}.footer-links a:hover{color:var(--ink)}
+    .reveal{opacity:1;transform:none;transition:.7s cubic-bezier(.2,.8,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}
+    @keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 0 46px rgba(116,239,255,.2)}50%{transform:scale(1.08);box-shadow:0 0 76px rgba(116,239,255,.36)}}@keyframes float{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-54%) scale(1.08)}}
+    @media (max-width:1050px){.nav-links{display:none}.hero-grid,.section-head,.risk-grid,.talent-box,.contact-grid{grid-template-columns:1fr}.flow-visual{min-height:560px}.grid.six,.grid.three{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}.trust-strip{grid-template-columns:repeat(2,1fr)}.trust-item:nth-child(3){border-left:0;border-top:1px solid var(--line)}.trust-item:nth-child(4){border-top:1px solid var(--line)}}
+    @media (max-width:700px){.section-cta{display:grid}.section-cta .btn{width:100%}.container{width:min(100% - 28px,1180px)}.nav{border-radius:26px;align-items:center}.brand-name{font-size:20px}.nav-cta{padding:11px 12px;font-size:10px}.hero{padding-top:46px}.hero-note,.grid.six,.grid.three,.grid.two,.process,.form-row,.footer-grid{grid-template-columns:1fr}.flow-visual{min-height:660px;padding:18px}.flow-columns{grid-template-columns:1fr;gap:10px;padding-top:44px}.arrow-rail{height:38px}.arrow-core{transform:rotate(90deg)}.node-glow{width:160px;height:160px}.trust-strip{grid-template-columns:1fr}.trust-item,.trust-item:nth-child(3),.trust-item:nth-child(4){border-left:0;border-top:1px solid var(--line)}.trust-item:first-child{border-top:0}section{padding:68px 0}.inverse{border-radius:28px;padding:64px 0}.card{padding:22px}.contact-shell{padding:20px;border-radius:30px}h1{font-size:52px}.section-head h2{font-size:42px}.contact-copy h2{font-size:46px}.footer-links{gap:10px}}
     @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
   <nav class="nav">
-    <a class="brand" href="#top" aria-label="Arzware home"><img src="AR_logo_transparent_dark.png" alt="Arzware Logo" height="34"><span class="brand-name">Arzware</span></a>
-    <div class="nav-links"><a href="#systems">Systems</a><a href="#services">Services</a><a href="#talent">Talent</a><a href="#process">Process</a></div>
-    <a class="nav-cta" href="#contact">Start a build →</a>
+    <a class="brand" href="#top" aria-label="Arzware home"><img class="brand-logo" src="AR_logo_transparent_dark.png" alt="Arzware logo"><span class="brand-name">Arzware</span></a>
+    <div class="nav-links"><a href="#services">Services</a><a href="#examples">Example Systems</a><a href="#process">Process</a><a href="#talent">Talent Model</a><a href="#contact">Contact</a></div>
+    <a class="nav-cta" href="#contact">Book a Systems Audit</a>
   </nav>
+
   <main id="top">
     <section class="hero container">
       <div class="hero-grid">
         <div class="reveal">
           <div class="eyebrow">AI-native software studio</div>
-          <h1>Turning business chaos into <span class="blue">digital systems.</span></h1>
-          <p class="lead"><strong>Arzware</strong> builds practical software for small and growing businesses — websites, apps, dashboards, automations, CRM-lite tools and AI-assisted workflows that make operations cleaner, faster and easier to scale.</p>
-          <div class="actions"><a class="btn primary" href="#services">Explore systems →</a><a class="btn secondary" href="#talent">See the talent engine</a></div>
-          <div class="micro"><div><span>Position</span><b>Software modernization studio</b></div><div><span>Focus</span><b>Operations, sales & customer flow</b></div><div><span>Method</span><b>AI-assisted execution</b></div></div>
+          <h1>Turn messy business operations into <span class="blue">simple digital systems.</span></h1>
+          <p class="lead"><strong>Arzware</strong> builds websites, dashboards, CRM-lite tools, automations and AI-assisted workflows for small businesses outgrowing spreadsheets, WhatsApp follow-ups and manual tracking.</p>
+          <div class="actions"><a class="btn primary" href="#contact">Book a Systems Audit →</a><a class="btn secondary" href="#examples">See Example Systems</a></div>
+          <div class="hero-note"><div><span>Start point</span><b>One messy workflow</b></div><div><span>Delivery</span><b>Smallest useful system</b></div><div><span>Outcome</span><b>Clearer follow-up, tracking & reports</b></div></div>
         </div>
-        <div class="system-orb reveal" aria-label="Animated Arzware AI business system core visual">
-          <div class="depth-grid"></div>
-          <div class="data-stream"><span></span><span></span><span></span></div>
-          <div class="core-wrap">
-            <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-            <div class="connector c1"></div><div class="connector c2"></div><div class="connector c3"></div>
-            <div class="ai-core"><img src="AR_logo_transparent_dark.png" alt="Arzware Logo" width="100"></div>
+
+        <div class="flow-visual reveal" aria-label="Chaos to system visual showing messy tools becoming organized workflows">
+          <div class="node-glow"></div>
+          <div class="flow-columns">
+            <div class="flow-stack">
+              <div class="flow-label">Messy inputs</div>
+              <div class="mini-card danger"><small>WhatsApp</small><b>Follow-ups buried in chats</b></div>
+              <div class="mini-card danger"><small>Sheets</small><b>Leads copied manually</b></div>
+              <div class="mini-card danger"><small>Requests</small><b>No owner, status or reminder</b></div>
+              <div class="mini-card danger"><small>Reports</small><b>Weekly visibility built by hand</b></div>
+            </div>
+            <div class="arrow-rail"><div class="arrow-core">→</div></div>
+            <div class="flow-stack">
+              <div class="flow-label">Simple system</div>
+              <div class="mini-card good"><small>Website form</small><b>Every request enters one pipeline</b></div>
+              <div class="dashboard">
+                <div class="dash-top"><span class="pill">CRM-lite</span><span class="pill">Live</span></div>
+                <div class="stage-row"><span>New leads</span><b>12</b></div>
+                <div class="bar"><span style="width:72%"></span></div>
+                <div class="stage-row"><span>Booked calls</span><b>5</b></div>
+                <div class="bar"><span style="width:46%"></span></div>
+                <div class="stage-row"><span>Follow-ups due</span><b>3</b></div>
+              </div>
+              <div class="mini-card good"><small>Automation</small><b>Reminders, booking flow and weekly report</b></div>
+            </div>
           </div>
-          <div class="node n1"></div><div class="node n2"></div><div class="node n3"></div>
-          <div class="particle p1"></div><div class="particle p2"></div><div class="particle p3"></div><div class="particle p4"></div>
-          <div class="floating-card fc1"><span>Input</span><b>Messy workflows, WhatsApp follow-ups, paper records</b></div>
-          <div class="floating-card fc2"><span>Output</span><b>Dashboards, automations, booking flows, client systems</b></div>
-          <div class="floating-card fc3"><span>Talent</span><b>Interns learn through supervised real-client work</b></div>
-          <div class="code-panel"><i>$ arzware diagnose --business</i><br/>map pain → design system → launch MVP <span class="caret"></span></div>
         </div>
       </div>
     </section>
-    <div class="ticker"><span>WEBSITES • WEB APPS • MOBILE APPS • DASHBOARDS • CRM-LITE • AUTOMATIONS • AI WORKFLOWS • CLIENT PORTALS • BOOKING FLOWS • BUSINESS SYSTEMS • WEBSITES • WEB APPS • MOBILE APPS • DASHBOARDS • CRM-LITE • AUTOMATIONS • AI WORKFLOWS • CLIENT PORTALS • BOOKING FLOWS • BUSINESS SYSTEMS • </span></div>
-    <section id="systems" class="container reveal">
-      <div class="section-head"><div class="kicker">§01 / The shift</div><div><h2>Not just a website. A cleaner way to operate.</h2><p>Arzware is built around one idea: technology should solve the real operational problem. Before choosing a tool, we understand how a business sells, communicates, tracks requests, follows up and serves customers.</p></div></div>
-      <div class="cards">
-        <article class="card wide"><small>Business problem</small><h3>Small teams are drowning in disconnected tools.</h3><p>Orders in WhatsApp, customer notes in memory, reports in spreadsheets, social media messages everywhere, and no clear operating rhythm.</p></article>
-        <article class="card"><small>Arzware response</small><h3>Simple systems first.</h3><p>The right answer may be a landing page, dashboard, bot, CRM-lite tracker, booking flow, app, or automation — not technology for its own sake.</p></article>
-        <article class="card"><small>Outcome</small><h3>Less friction. More control.</h3><p>Businesses get better follow-up, clearer tracking, faster service, and more confidence in daily operations.</p></article>
-        <article class="card wide"><small>AI-native model</small><h3>AI helps the team analyze, design and execute faster.</h3><p>AI is used to support discovery, workflow mapping, prototypes, documentation, testing, content and delivery — with human supervision and client trust at the center.</p></article>
+
+    <div class="strip">
+      <div class="container trust-strip" aria-label="Positioning highlights">
+        <div class="trust-item"><b>Built for messy real-world workflows</b><span>Leads, bookings, orders, requests, tasks and reporting.</span></div>
+        <div class="trust-item"><b>Websites connected to operations</b><span>Forms, booking, CRM-lite tracking and follow-up flows.</span></div>
+        <div class="trust-item"><b>Dashboards, automations, CRM-lite systems</b><span>Practical tools small teams can actually use.</span></div>
+        <div class="trust-item"><b>AI-assisted, human-reviewed</b><span>Faster delivery without removing quality control.</span></div>
+      </div>
+    </div>
+
+    <section id="problems" class="container reveal">
+      <div class="section-head"><div class="kicker">§01 / Problems we solve</div><div><h2>When work is scattered, growth becomes harder to manage.</h2><p>Arzware focuses on operational pain that small teams feel every day: missed leads, repeated follow-ups, unclear ownership, manual reporting and disconnected tools.</p></div></div>
+      <div class="grid six">
+        <article class="card problem-card"><div class="icon">01</div><h3>Missed leads</h3><p>Potential customers disappear across WhatsApp, DMs, forms and calls without a single tracking view.</p></article>
+        <article class="card problem-card"><div class="icon">02</div><h3>Manual follow-ups</h3><p>Owners and teams rely on memory instead of reminders, statuses and clear next actions.</p></article>
+        <article class="card problem-card"><div class="icon">03</div><h3>Spreadsheet chaos</h3><p>Sheets become fragile mini-databases with duplicated rows, missing context and unclear ownership.</p></article>
+        <article class="card problem-card"><div class="icon">04</div><h3>No dashboard visibility</h3><p>No simple way to see leads, tasks, orders, requests or weekly performance at a glance.</p></article>
+        <article class="card problem-card"><div class="icon">05</div><h3>Disconnected tools</h3><p>Your website, booking, inbox, forms and team workflow do not talk to each other.</p></article>
+        <article class="card problem-card"><div class="icon">06</div><h3>Slow reporting</h3><p>Progress updates are rebuilt manually instead of generated from the actual workflow.</p></article>
       </div>
     </section>
+
     <section id="services" class="inverse reveal">
       <div class="container">
-        <div class="section-head"><div class="kicker">§02 / What we build</div><div><h2>Practical digital infrastructure for real businesses.</h2><p>Services are framed around business outcomes: selling better, organizing work, reducing repeated tasks, improving customer experience and making internal work visible.</p></div></div>
-        <div class="pipeline">
-          <div class="step"><span>01</span><h3>Websites & web apps</h3><p>Modern pages, portals, forms and client-facing digital experiences.</p></div>
-          <div class="step"><span>02</span><h3>Mobile apps</h3><p>Customer access, booking, field work, internal operations and service flows.</p></div>
-          <div class="step"><span>03</span><h3>Dashboards</h3><p>Track orders, leads, tasks, reports, requests and weekly progress.</p></div>
-          <div class="step"><span>04</span><h3>Automation</h3><p>Repeated reminders, form submissions, reporting and coordination workflows.</p></div>
-          <div class="step"><span>05</span><h3>AI workflows</h3><p>AI-assisted operations, content, research, support and internal knowledge systems.</p></div>
+        <div class="section-head"><div class="kicker">§02 / Systems we launch</div><div><h2>Clear offers around practical business outcomes.</h2><p>Instead of selling vague “digital solutions,” Arzware starts from one workflow and launches the smallest useful system that removes friction.</p></div></div>
+        <div class="grid three">
+          <article class="card inverse-card offer-card"><small>Workflow Diagnosis</small><h3>Map one messy process before building.</h3><p>For businesses that know something is inefficient but are not sure what to build.</p><div class="offer-detail"><div><b>Solves</b><span>Unclear bottlenecks and tool confusion.</span></div><div><b>Delivers</b><span>Workflow map, system recommendation and MVP scope.</span></div></div></article>
+          <article class="card inverse-card offer-card"><small>Automation Sprint</small><h3>Remove repeated manual coordination.</h3><p>For teams repeating follow-ups, reminders, form handling, reporting and status updates.</p><div class="offer-detail"><div><b>Solves</b><span>Time lost to repetitive operational tasks.</span></div><div><b>Delivers</b><span>Automated reminders, forms, notifications and reports.</span></div></div></article>
+          <article class="card inverse-card offer-card"><small>CRM-Lite Setup</small><h3>Track leads and customers without enterprise CRM weight.</h3><p>For small teams losing leads in chats, notebooks, spreadsheets or memory.</p><div class="offer-detail"><div><b>Solves</b><span>Missed leads and unclear next steps.</span></div><div><b>Delivers</b><span>Simple pipeline, statuses, owners and follow-up reminders.</span></div></div></article>
+          <article class="card inverse-card offer-card"><small>Dashboard MVP</small><h3>Turn daily work into a clean operating view.</h3><p>For businesses managing orders, tasks, requests or weekly performance manually.</p><div class="offer-detail"><div><b>Solves</b><span>No visibility into what is happening.</span></div><div><b>Delivers</b><span>Dashboard for leads, orders, tasks, requests or reports.</span></div></div></article>
+          <article class="card inverse-card offer-card"><small>Website + System Build</small><h3>Connect your website to the workflow behind it.</h3><p>For businesses that need more than a static online brochure.</p><div class="offer-detail"><div><b>Solves</b><span>Websites that generate messages but no organized process.</span></div><div><b>Delivers</b><span>Website, forms, booking, dashboard and follow-up flow.</span></div></div></article>
+          <article class="card inverse-card offer-card"><small>AI Workflow Assistant</small><h3>Use AI where it supports real operations.</h3><p>For teams needing help with internal knowledge, content, support, research or admin work.</p><div class="offer-detail"><div><b>Solves</b><span>Repeated thinking work and scattered knowledge.</span></div><div><b>Delivers</b><span>AI-assisted workflows with human review and documentation.</span></div></div></article>
+        </div>
+        <div class="section-cta"><div><b>Have one process that keeps causing friction?</b><span>Start with a focused audit before committing to a bigger build.</span></div><a class="btn primary" href="#contact">Request a Workflow Diagnosis</a></div>
+      </div>
+    </section>
+
+    <section id="examples" class="container reveal">
+      <div class="section-head"><div class="kicker">§03 / Example systems</div><div><h2>Demo builds that show what “digital systems” actually means.</h2><p>These are example systems Arzware can build around common small-business pain points. They are not fake client case studies or invented testimonials.</p></div></div>
+      <div class="grid three">
+        <article class="card case-card"><div class="case-head"><small>Demo system</small><span class="pill">Leads</span></div><h3>Lead Tracking System</h3><p class="case-for">For businesses losing leads in WhatsApp, DMs, spreadsheets or manual notes.</p><div class="mock"><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div></div><div class="case-list"><span>Landing page form</span><span>CRM-lite dashboard</span><span>Lead status tracking</span><span>Automated follow-up reminders</span><span>Weekly visibility</span></div></article>
+        <article class="card case-card"><div class="case-head"><small>Demo system</small><span class="pill">Bookings</span></div><h3>Booking & Client Flow</h3><p class="case-for">For clinics, consultants, restaurants, tutors and appointment-based service providers.</p><div class="mock"><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div></div><div class="case-list"><span>Booking page</span><span>Confirmation flow</span><span>Client records</span><span>Admin dashboard</span><span>Reminder automation</span></div></article>
+        <article class="card case-card"><div class="case-head"><small>Demo system</small><span class="pill">Operations</span></div><h3>Operations Dashboard</h3><p class="case-for">For teams managing orders, tasks, requests or internal work manually.</p><div class="mock"><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div></div><div class="case-list"><span>Task and order tracking</span><span>Request management</span><span>Team visibility</span><span>Weekly reports</span><span>Progress dashboard</span></div></article>
+      </div>
+      <div class="section-cta"><div><b>Not sure which system fits your business?</b><span>Send one messy workflow and we’ll identify the smallest useful starting point.</span></div><a class="btn secondary" href="#contact">Send Us One Messy Workflow</a></div>
+    </section>
+
+    <section id="process" class="container reveal">
+      <div class="section-head"><div class="kicker">§04 / How it works</div><div><h2>Diagnose first. Build only what the workflow needs.</h2><p>The process is designed to reduce risk: map the work, prototype the system, launch a usable first version, then improve based on real usage.</p></div></div>
+      <div class="process">
+        <article class="card process-step"><small>Diagnose</small><h3>Map the real workflow.</h3><p>Understand customers, tools, handoffs, follow-ups, bottlenecks and missed opportunities.</p></article>
+        <article class="card process-step"><small>Prototype</small><h3>Make the system visible.</h3><p>Sketch dashboards, flows, forms and data structure before committing to a bigger build.</p></article>
+        <article class="card process-step"><small>Build</small><h3>Launch the smallest useful system.</h3><p>Create the website, dashboard, CRM-lite tracker, automation or workflow assistant needed first.</p></article>
+        <article class="card process-step"><small>Launch & improve</small><h3>Support real adoption.</h3><p>Handover, document, review usage and decide what should improve after the first version works.</p></article>
+      </div>
+    </section>
+
+    <section id="risk" class="container reveal">
+      <div class="risk-grid">
+        <div class="risk-panel"><div class="kicker">§05 / How we reduce risk</div><h2 class="section-headline" style="font-family:Playfair Display,serif;font-size:clamp(38px,5vw,72px);line-height:.95;letter-spacing:-.045em;margin:22px 0 18px">Practical scope, clear handover, no software bloat.</h2><p style="color:var(--soft);font-size:18px;line-height:1.65;margin:0">Arzware is built around focused systems that solve a real business pain first. The goal is not to sell a complicated platform. The goal is to make one important workflow clearer and easier to run.</p></div>
+        <div class="risk-list">
+          <div class="risk-item"><span class="quality-badge">✓</span><div><b>Diagnose before building</b><p>We map the workflow before choosing tools.</p></div></div>
+          <div class="risk-item"><span class="quality-badge">✓</span><div><b>Build the smallest useful system</b><p>We avoid bloated software and focus on what solves the problem.</p></div></div>
+          <div class="risk-item"><span class="quality-badge">✓</span><div><b>Document and hand over</b><p>Owners and teams get clear instructions for using the system.</p></div></div>
+          <div class="risk-item"><span class="quality-badge">✓</span><div><b>Improve after launch</b><p>Systems can grow after the first version is working.</p></div></div>
         </div>
       </div>
     </section>
+
     <section id="talent" class="container reveal">
-      <div class="section-head"><div class="kicker">§03 / The talent engine</div><div><h2>Real client work becomes a training ground.</h2><p>Arzware is designed as both a software studio and a supervised learning environment where interns and junior talent gain hands-on experience across real business projects.</p></div></div>
-      <div class="split">
-        <div class="panel"><h3>For businesses</h3><p>A lean, AI-assisted team that can diagnose problems and build useful digital solutions without the cost of hiring a full internal technology department.</p><ul><li>Business workflow audits</li><li>Prototype-first delivery</li><li>Clear documentation and launch support</li></ul></div>
-        <div class="panel"><h3>For young talent</h3><p>Interns learn through supervised work in software development, design, content, digital marketing, research, client communication, operations and AI-assisted workflows.</p><ul><li>Role-based responsibilities</li><li>Portfolio-building real tasks</li><li>Coaching, feedback and professional habits</li></ul></div>
+      <div class="section-head"><div class="kicker">§06 / Talent model</div><div><h2>Supervised delivery with a social-impact engine.</h2><p>Arzware develops junior talent without making client work feel experimental. Projects are led, reviewed and quality-controlled through a supervised delivery process.</p></div></div>
+      <div class="talent-box">
+        <div class="talent-lead"><h3>Junior talent supports the system. Professional responsibility stays supervised.</h3><p>Young contributors can help with structured tasks, documentation, QA, content, research and implementation support. Clients get practical delivery at an accessible starting scope, while delivery remains reviewed, organized and accountable.</p></div>
+        <div class="talent-points">
+          <div class="risk-item"><span class="quality-badge">1</span><div><b>Client work is supervised</b><p>Tasks are scoped, reviewed and integrated through a delivery process.</p></div></div>
+          <div class="risk-item"><span class="quality-badge">2</span><div><b>Quality is reviewed</b><p>Junior contribution does not replace ownership, QA or professional responsibility.</p></div></div>
+          <div class="risk-item"><span class="quality-badge">3</span><div><b>The model creates capacity and impact</b><p>Businesses get support while young talent builds practical skills on real, guided work.</p></div></div>
+        </div>
       </div>
     </section>
-    <section id="process" class="container reveal">
-      <p class="manifesto">We do not start with “build an app.” We start with the business pain, then design the <em>smallest useful system</em> that can move the company forward.</p>
-      <div style="height:48px"></div>
-      <div class="cards">
-        <article class="card"><small>01 / Discover</small><h3>Map the real workflow.</h3><p>Understand customers, follow-ups, tools, bottlenecks, manual steps and missed opportunities.</p></article>
-        <article class="card"><small>02 / Design</small><h3>Choose the right system.</h3><p>Website, dashboard, automation, CRM, app, bot, portal or a focused combination.</p></article>
-        <article class="card"><small>03 / Build</small><h3>Launch the smallest useful version.</h3><p>Deliver an MVP that is clear, usable and ready to improve with real business feedback.</p></article>
+
+    <section id="contact" class="container reveal">
+      <div class="contact-shell">
+        <div class="contact-grid">
+          <div class="contact-copy"><div class="kicker">Book a Systems Audit</div><h2>Ready to clean up one messy workflow?</h2><p>Send us the process that is slowing your business down. We’ll help identify the smallest useful system to fix it.</p><div class="actions"><a class="btn primary" href="mailto:hello@arzware.com?subject=Systems%20Audit%20Request&body=Name%3A%0AEmail%3A%0ABusiness%20type%3A%0AMessy%20workflow%3A%0ACurrent%20tools%3A%0ATimeline%3A">Email hello@arzware.com</a><a class="btn secondary" href="#examples">Review examples</a></div><p class="form-note">Submitting opens your email app with your audit request pre-filled.</p></div>
+          <form class="form" id="audit-form">
+            <div class="form-row"><div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" placeholder="Your name" required></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div></div>
+            <div class="form-row"><div class="field"><label for="business">Business type</label><input id="business" name="business" placeholder="Clinic, restaurant, service provider..."></div><div class="field"><label for="timeline">Timeline</label><select id="timeline" name="timeline"><option>Not urgent — exploring</option><option>This month</option><option>Next 2–4 weeks</option><option>As soon as possible</option></select></div></div>
+            <div class="field"><label for="workflow">What workflow is messy?</label><textarea id="workflow" name="workflow" placeholder="Example: leads come from WhatsApp and Instagram, then we forget who needs follow-up..." required></textarea></div>
+            <div class="field"><label for="tools">Current tools used</label><input id="tools" name="tools" placeholder="WhatsApp, Google Sheets, paper notes, Instagram DMs..."></div>
+            <button class="btn primary" type="submit">Send Us One Messy Workflow →</button>
+            <p class="form-note">Submitting opens your email app with the audit request pre-filled.</p>
+          </form>
+        </div>
       </div>
-    </section>
-    <section id="contact" class="footer container reveal">
-      <div class="footer-grid"><div><div class="kicker">Build with Arzware</div><h2>Systems for the next operating layer of small business.</h2></div><div><p>For clients, partners and grant reviewers: Arzware is a focused AI-native software studio with a social-impact talent model — building digital systems while developing young technical talent through supervised real work.</p><div class="actions"><a class="btn primary" href="mailto:hello@arzware.com">hello@arzware.com</a><a class="btn secondary" href="#top">Back to top ↑</a></div></div></div>
     </section>
   </main>
+
+  <footer class="footer container">
+    <div class="footer-grid">
+      <div><a class="brand" href="#top" aria-label="Arzware home"><img class="brand-logo" src="AR_logo_transparent_dark.png" alt="Arzware logo"><span class="brand-name">Arzware</span></a><p>AI-native software studio turning messy operations into practical digital systems.</p><p>© <span id="year"></span> Arzware. All rights reserved.</p></div>
+      <div class="footer-links"><a href="#services">Services</a><a href="#examples">Example Systems</a><a href="#process">Process</a><a href="#talent">Talent Model</a><a href="mailto:hello@arzware.com">Email</a><a href="https://github.com/admatieh/arzware" target="_blank" rel="noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+
   <script>
-    const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.14});
+    const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-    const orb=document.querySelector('.system-orb');
-    if(orb && !matchMedia('(prefers-reduced-motion: reduce)').matches){orb.addEventListener('pointermove',e=>{const r=orb.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;orb.style.transform=`rotateX(${y*-4}deg) rotateY(${x*5}deg)`});orb.addEventListener('pointerleave',()=>orb.style.transform='')}
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const form = document.getElementById('audit-form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const subject = 'Systems Audit Request';
+      const body = [
+        'Name: ' + (data.get('name') || ''),
+        'Email: ' + (data.get('email') || ''),
+        'Business type: ' + (data.get('business') || ''),
+        'Timeline: ' + (data.get('timeline') || ''),
+        '',
+        'What workflow is messy?',
+        data.get('workflow') || '',
+        '',
+        'Current tools used:',
+        data.get('tools') || ''
+      ].join('\n');
+      window.location.href = 'mailto:hello@arzware.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
   </script>
 </body>
 </html>
