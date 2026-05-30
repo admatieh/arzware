@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arzware — Systems Agency Concept</title>
+  <meta name="description" content="A Hermes-inspired alternate concept for Arzware: a dark technical systems agency that turns messy workflows into operating systems for small businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      color-scheme: dark;
+      --bg:#07100d;
+      --bg2:#0b1713;
+      --ink:#eee7d7;
+      --muted:#c4b9a8;
+      --dim:#9a907f;
+      --line:rgba(238,231,215,.20);
+      --line2:rgba(238,231,215,.34);
+      --panel:rgba(238,231,215,.035);
+      --panel2:rgba(238,231,215,.075);
+      --paper:#e9ddc5;
+      --paper-ink:#0b120f;
+      --acid:#c6ff70;
+      --amber:#c99147;
+      --teal:#72d7ba;
+      --danger:#ff745f;
+      --shadow:0 30px 100px rgba(0,0,0,.48);
+    }
+    [data-theme="light"]{
+      color-scheme: light;
+      --bg:#e7dfd1;
+      --bg2:#d8cebd;
+      --ink:#101512;
+      --muted:#4a5048;
+      --dim:#757a70;
+      --line:rgba(16,21,18,.23);
+      --line2:rgba(16,21,18,.38);
+      --panel:rgba(16,21,18,.035);
+      --panel2:rgba(16,21,18,.08);
+      --paper:#17211c;
+      --paper-ink:#efe5d4;
+      --acid:#3a5f08;
+      --amber:#8a5b23;
+      --teal:#286b5b;
+      --danger:#9d3121;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 52% 8%, rgba(114,215,186,.13), transparent 32rem),
+        radial-gradient(circle at 8% 78%, rgba(198,255,112,.08), transparent 22rem),
+        linear-gradient(180deg,var(--bg),var(--bg2) 48%,var(--bg));
+      color:var(--ink);
+      font-family:"Libre Baskerville", Georgia, serif;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:linear-gradient(var(--line) 1px, transparent 1px),linear-gradient(90deg,var(--line) 1px, transparent 1px);background-size:88px 88px;mask-image:linear-gradient(to bottom, black, black 68%, transparent)}
+    body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 300 300%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22 opacity=%220.42%22/%3E%3C/svg%3E');mix-blend-mode:multiply}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit;color:inherit}
+    .frame{width:min(1380px,calc(100% - 24px));margin:12px auto 0;border:1px solid var(--line2);box-shadow:var(--shadow);background:rgba(7,16,13,.55);backdrop-filter:blur(12px)}
+    [data-theme="light"] .frame{background:rgba(231,223,209,.68)}
+    .system-nav{display:grid;grid-template-columns:minmax(220px,1.4fr) repeat(5,minmax(92px,.55fr));border-bottom:1px solid var(--line2);min-height:74px}
+    .nav-cell{display:flex;align-items:center;justify-content:center;border-left:1px solid var(--line);padding:14px 16px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);position:relative;overflow:hidden}.nav-cell:first-child{border-left:0;justify-content:flex-start}.nav-cell:before{content:"";position:absolute;inset:auto 0 0;height:0;background:var(--ink);transition:.18s}.nav-cell:hover:before,.nav-cell:focus-visible:before{height:3px}.nav-cell:hover{color:var(--ink)}
+    .brand{gap:14px}.brand img{width:46px;height:42px;object-fit:contain;filter:invert(94%) sepia(12%) saturate(511%) hue-rotate(349deg) brightness(104%) contrast(92%) drop-shadow(0 0 18px rgba(198,255,112,.18))}.brand span{font-family:"Archivo Expanded",Inter,sans-serif;font-weight:800;font-size:18px;color:var(--ink);letter-spacing:.18em}.brand small{display:block;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.22em;color:var(--dim);margin-top:3px}
+    [data-theme="light"] .brand img{filter:brightness(0) saturate(1)}
+    .theme-btn{background:none;border:0;width:100%;height:100%;cursor:pointer}.switch{width:54px;height:26px;border:1px solid var(--line2);border-radius:999px;padding:3px;display:inline-flex;align-items:center}.switch i{display:block;width:18px;height:18px;background:var(--ink);border-radius:50%;transition:.2s}[data-theme="light"] .switch i{transform:translateX(26px)}
+    .hero{min-height:calc(100vh - 87px);display:grid;grid-template-rows:auto 1fr auto}.hero-main{display:grid;grid-template-columns:1fr 390px;border-bottom:1px solid var(--line2)}
+    .hero-copy{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:88px 42px 70px;position:relative;min-height:620px}.system-tag{font-family:"IBM Plex Mono",monospace;color:var(--acid);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:28px}.hero h1{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(46px,7.7vw,120px);line-height:.85;letter-spacing:-.075em;text-transform:uppercase;margin:0;text-wrap:balance;max-width:980px}.hero p{font-size:clamp(16px,1.35vw,20px);line-height:1.76;color:var(--muted);max-width:760px;margin:30px auto 0}.hero p strong{color:var(--ink)}
+    .command-stack{width:min(760px,100%);display:grid;gap:12px;margin-top:38px}.command{display:grid;grid-template-columns:126px 1fr 72px;border:1px solid var(--line2);background:rgba(0,0,0,.16);font-family:"IBM Plex Mono",monospace;min-height:54px}.cmd-label{display:flex;align-items:center;padding:0 16px;border-right:1px solid var(--line);font-size:11px;color:var(--acid);letter-spacing:.12em;text-transform:uppercase}.command code{display:flex;align-items:center;padding:0 16px;font-size:13px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.copy{border:0;border-left:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:11px}.copy:hover{background:var(--paper);color:var(--paper-ink)}
+    .side-panel{border-left:1px solid var(--line2);display:grid;grid-template-rows:auto 1fr auto;min-height:620px;background:linear-gradient(180deg,rgba(238,231,215,.06),transparent)}.side-top,.side-bottom{padding:18px;border-bottom:1px solid var(--line2);font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:11px;letter-spacing:.12em;color:var(--dim);display:flex;justify-content:space-between;gap:12px}.side-bottom{border-top:1px solid var(--line2);border-bottom:0}.schematic{position:relative;overflow:hidden;min-height:440px}.schematic:before{content:"";position:absolute;inset:42px;border:1px solid var(--line);background:radial-gradient(circle at 50% 50%, rgba(198,255,112,.14), transparent 38%),linear-gradient(45deg,transparent 49%,var(--line) 50%,transparent 51%)}.orb{position:absolute;left:50%;top:50%;width:178px;height:178px;border:1px solid var(--line2);border-radius:50%;transform:translate(-50%,-50%);display:grid;place-items:center;background:rgba(238,231,215,.04);box-shadow:0 0 80px rgba(114,215,186,.12)}.orb img{width:92px;filter:invert(94%) sepia(12%) saturate(511%) hue-rotate(349deg) brightness(104%) contrast(92%)}[data-theme="light"] .orb img{filter:brightness(0)}.ring{position:absolute;border:1px solid var(--line);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);animation:spin 22s linear infinite}.r1{width:270px;height:270px}.r2{width:350px;height:350px;animation-duration:35s;animation-direction:reverse}.r3{width:430px;height:430px;animation-duration:48s}.node{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--acid);box-shadow:0 0 18px var(--acid)}.n1{left:22%;top:31%}.n2{right:18%;top:42%;background:var(--teal);box-shadow:0 0 18px var(--teal)}.n3{left:31%;bottom:23%;background:var(--amber);box-shadow:0 0 18px var(--amber)}.n4{right:30%;bottom:19%}
+    .ticker{display:flex;overflow:hidden;border-bottom:1px solid var(--line2);font-family:"IBM Plex Mono",monospace;text-transform:uppercase;color:var(--dim);font-size:12px;letter-spacing:.16em}.ticker div{display:flex;gap:28px;white-space:nowrap;padding:15px 0;animation:marquee 28s linear infinite}.ticker span{padding-left:28px}.metrics{display:grid;grid-template-columns:repeat(4,1fr)}.metric{border-left:1px solid var(--line);padding:20px 22px;font-family:"IBM Plex Mono",monospace}.metric:first-child{border-left:0}.metric small{display:block;color:var(--dim);font-size:10px;letter-spacing:.14em;text-transform:uppercase}.metric b{display:block;color:var(--ink);font-size:18px;margin-top:8px;font-family:"Libre Baskerville",Georgia,serif;font-weight:700}
+    section{border-bottom:1px solid var(--line2)}.section-grid{display:grid;grid-template-columns:280px 1fr}.section-label{border-right:1px solid var(--line2);padding:28px 22px;font-family:"IBM Plex Mono",monospace;color:var(--acid);font-size:12px;text-transform:uppercase;letter-spacing:.15em}.section-body{padding:38px}.section-title{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(34px,5vw,78px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:0 0 22px;max-width:930px}.section-lead{font-size:18px;line-height:1.75;color:var(--muted);max-width:860px;margin:0 0 34px}
+    .module-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line2);border-left:1px solid var(--line2)}.module{min-height:245px;border-right:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:22px;background:var(--panel);position:relative}.module:after{content:attr(data-id);position:absolute;right:18px;top:16px;color:var(--dim);font-family:"IBM Plex Mono",monospace;font-size:11px}.module h3{font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.035em;line-height:1.02;font-size:24px;margin:44px 0 14px}.module p{color:var(--muted);line-height:1.65;margin:0}.module ul{margin:18px 0 0;padding-left:18px;color:var(--muted);line-height:1.8}.module:hover{background:var(--panel2)}
+    .split{display:grid;grid-template-columns:1.1fr .9fr;border:1px solid var(--line2)}.terminal{background:rgba(0,0,0,.22);min-height:470px}.term-top{height:42px;border-bottom:1px solid var(--line2);display:flex;align-items:center;gap:8px;padding:0 14px;font-family:"IBM Plex Mono",monospace;color:var(--dim);font-size:11px;text-transform:uppercase}.dot{width:9px;height:9px;border:1px solid var(--line2);border-radius:50%}.term-lines{padding:24px;font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.8;color:var(--muted)}.prompt{color:var(--acid)}.ok{color:var(--teal)}.warn{color:var(--amber)}.diagram{padding:28px;min-height:470px;background:radial-gradient(circle at 70% 26%,rgba(198,255,112,.12),transparent 30%),var(--panel);display:flex;flex-direction:column;justify-content:space-between}.route{display:grid;gap:14px}.route-row{display:grid;grid-template-columns:130px 1fr;border:1px solid var(--line2);min-height:58px}.route-row span{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--acid);letter-spacing:.12em;text-transform:uppercase;border-right:1px solid var(--line);display:flex;align-items:center;padding:0 14px}.route-row b{display:flex;align-items:center;padding:0 16px;font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.035em}.diagram-note{font-size:17px;color:var(--muted);line-height:1.7;margin:26px 0 0}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line2);border-left:0}.step{border-left:1px solid var(--line2);padding:24px;min-height:270px;position:relative}.step small{font-family:"IBM Plex Mono",monospace;color:var(--acid);letter-spacing:.14em;text-transform:uppercase}.step h3{font-family:"Archivo Expanded",Inter,sans-serif;line-height:1.02;text-transform:uppercase;letter-spacing:-.045em;font-size:25px;margin:70px 0 14px}.step p{color:var(--muted);line-height:1.62;margin:0}.step:before{content:attr(data-step);position:absolute;top:18px;right:18px;font-family:"IBM Plex Mono",monospace;color:var(--dim)}
+    .contact{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line2);background:rgba(0,0,0,.12)}.contact-copy{padding:32px;border-right:1px solid var(--line2)}.contact-copy h2{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(34px,5vw,70px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:16px 0}.contact-copy p{color:var(--muted);line-height:1.75}.contact-form{padding:26px;display:grid;gap:12px}.field{display:grid;gap:7px}.field label{font-family:"IBM Plex Mono",monospace;color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.14em}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line2);box-shadow:inset 0 0 0 1px rgba(238,231,215,.04);background:transparent;padding:13px 14px;outline:none}.field textarea{min-height:118px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{background:var(--panel2);border-color:var(--acid)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:var(--paper);color:var(--paper-ink);min-height:54px;padding:0 18px;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.1em;font-size:12px;cursor:pointer}.btn:hover{filter:brightness(1.08)}.btn.secondary{background:transparent;color:var(--ink)}
+    .footer{display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--line2);font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em}.footer div,.footer a{padding:18px 22px;border-left:1px solid var(--line)}.footer div:first-child{border-left:0}
+    .toast{position:fixed;right:18px;bottom:18px;border:1px solid var(--line2);background:var(--paper);color:var(--paper-ink);padding:12px 14px;font-family:"IBM Plex Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;opacity:0;transform:translateY(8px);transition:.2s;z-index:10}.toast.show{opacity:1;transform:none}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+    @media (max-width:1050px){.system-nav{grid-template-columns:1fr repeat(2,110px)}.system-nav .hide-md{display:none}.hero-main,.section-grid,.split,.contact{grid-template-columns:1fr}.side-panel,.section-label,.contact-copy{border-left:0;border-right:0}.side-panel{border-top:1px solid var(--line2)}.module-grid{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}.metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(3){border-left:0;border-top:1px solid var(--line)}.metric:nth-child(4){border-top:1px solid var(--line)}}
+    @media (max-width:680px){.frame{width:calc(100% - 12px);margin-top:6px}.system-nav{grid-template-columns:1fr 76px}.system-nav .mobile-hide{display:none}.brand span{font-size:14px}.hero-copy{padding:58px 18px;min-height:560px}.hero h1{font-size:44px;line-height:.92}.command{grid-template-columns:1fr 64px}.cmd-label{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line);min-height:38px}.side-panel{min-height:520px}.section-body{padding:24px 16px}.module-grid,.process,.metrics,.row,.footer{grid-template-columns:1fr}.metric,.metric:nth-child(3),.metric:nth-child(4){border-left:0;border-top:1px solid var(--line)}.module{min-height:220px}.footer div,.footer a{border-left:0;border-top:1px solid var(--line);padding:14px}.footer div:first-child{border-top:0}.route-row{grid-template-columns:1fr}.route-row span{border-right:0;border-bottom:1px solid var(--line);min-height:36px}.contact-form{padding:18px}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <nav class="system-nav" aria-label="Primary navigation">
+      <a class="nav-cell brand" href="#top"><img src="AR_logo_transparent_dark.png" alt="Arzware logo"><span>ARZWARE<small>creative systems agency</small></span></a>
+      <a class="nav-cell mobile-hide" href="#modules">Modules</a>
+      <a class="nav-cell mobile-hide" href="#console">Console</a>
+      <a class="nav-cell hide-md" href="#process">Process</a>
+      <a class="nav-cell hide-md" href="#contact">Audit</a>
+      <button class="nav-cell theme-btn" id="themeBtn" type="button" aria-label="Toggle theme"><span class="switch"><i></i></span></button>
+    </nav>
+
+    <main id="top" class="hero">
+      <div class="hero-main">
+        <section class="hero-copy" aria-label="Arzware alternate concept hero">
+          <div class="system-tag">workflow systems • supervised delivery</div>
+          <h1>Business chaos, converted into operating systems.</h1>
+          <p><strong>Arzware</strong> designs the digital layer behind small businesses: lead pipelines, booking flows, dashboards, automations, CRM-lite tools, and AI-assisted work systems.</p>
+          <div class="command-stack" aria-label="Quick action commands">
+            <div class="command"><span class="cmd-label">Audit</span><code>arzware diagnose --workflow "messy follow-ups"</code><button class="copy" data-copy="arzware diagnose --workflow messy-follow-ups">Copy</button></div>
+            <div class="command"><span class="cmd-label">Build</span><code>launch smallest-useful-system --handover included</code><button class="copy" data-copy="launch smallest-useful-system --handover included">Copy</button></div>
+          </div>
+        </section>
+
+        <aside class="side-panel" aria-label="System schematic">
+          <div class="side-top"><span>ARZWARE // OPS CORE</span><span>v0.2</span></div>
+          <div class="schematic">
+            <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+            <span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><span class="node n4"></span>
+            <div class="orb"><img src="AR_logo_transparent_dark.png" alt="Arzware mark"></div>
+          </div>
+          <div class="side-bottom"><span>Status: mapping workflow</span><span>Risk: reduced</span></div>
+        </aside>
+      </div>
+
+      <div class="ticker" aria-hidden="true"><div><span>leads → CRM-lite</span><span>bookings → reminders</span><span>requests → dashboard</span><span>reports → weekly visibility</span><span>AI → human reviewed</span><span>leads → CRM-lite</span><span>bookings → reminders</span><span>requests → dashboard</span><span>reports → weekly visibility</span><span>AI → human reviewed</span></div></div>
+      <div class="metrics" aria-label="Positioning strip">
+        <div class="metric"><small>Start point</small><b>One messy workflow</b></div>
+        <div class="metric"><small>Method</small><b>Diagnose before build</b></div>
+        <div class="metric"><small>Delivery</small><b>Smallest useful system</b></div>
+        <div class="metric"><small>Output</small><b>Documented handover</b></div>
+      </div>
+    </main>
+
+    <section id="modules">
+      <div class="section-grid">
+        <div class="section-label">§01 / system modules</div>
+        <div class="section-body">
+          <h2 class="section-title">Software offers shaped like operational tools.</h2>
+          <p class="section-lead">This version frames Arzware less like an agency and more like a systems workshop: each offer maps a specific business mess into a clean, usable workflow.</p>
+          <div class="module-grid">
+            <article class="module" data-id="M-01"><h3>Workflow Diagnosis</h3><p>Map the process, handoffs, tools, bottlenecks, and smallest useful system before choosing what to build.</p></article>
+            <article class="module" data-id="M-02"><h3>Lead Operating Layer</h3><p>Replace scattered DMs, calls, WhatsApp follow-ups, and spreadsheet notes with one visible lead pipeline.</p></article>
+            <article class="module" data-id="M-03"><h3>Booking Control Flow</h3><p>Create booking pages, confirmation states, client records, reminders, and a clear admin surface.</p></article>
+            <article class="module" data-id="M-04"><h3>Operations Dashboard</h3><p>Track requests, tasks, orders, owners, weekly reports, and status changes without manual reporting chaos.</p></article>
+            <article class="module" data-id="M-05"><h3>Automation Sprint</h3><p>Automate repeated forms, reminders, follow-ups, reporting, notifications, and coordination tasks.</p></article>
+            <article class="module" data-id="M-06"><h3>AI Workflow Assistant</h3><p>Use AI for research, internal knowledge, content, support, and operations with human review built in.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="console">
+      <div class="section-grid">
+        <div class="section-label">§02 / operating console</div>
+        <div class="section-body">
+          <h2 class="section-title">From scattered inputs to one business control surface.</h2>
+          <p class="section-lead">The visual language borrows the seriousness of technical documentation and command interfaces, but turns it toward small-business operations instead of developer tooling.</p>
+          <div class="split">
+            <div class="terminal" aria-label="Workflow console mockup">
+              <div class="term-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>workflow-diagnosis.log</span></div>
+              <div class="term-lines">
+                <div><span class="prompt">$</span> scan sources --business="service provider"</div>
+                <div class="warn">found: WhatsApp leads, Instagram DMs, phone calls, sheet rows</div>
+                <div><span class="prompt">$</span> detect bottlenecks</div>
+                <div>→ no lead owner</div>
+                <div>→ no follow-up reminders</div>
+                <div>→ weekly reporting built manually</div>
+                <div><span class="prompt">$</span> recommend system</div>
+                <div class="ok">create: CRM-lite pipeline + booking flow + reminder automation</div>
+                <div class="ok">handover: docs, dashboard, owner workflow</div>
+              </div>
+            </div>
+            <div class="diagram">
+              <div class="route">
+                <div class="route-row"><span>Input</span><b>WhatsApp / DMs / forms</b></div>
+                <div class="route-row"><span>System</span><b>CRM-lite + dashboard</b></div>
+                <div class="route-row"><span>Automate</span><b>follow-ups + reminders</b></div>
+                <div class="route-row"><span>Review</span><b>weekly visibility report</b></div>
+              </div>
+              <p class="diagram-note">The result is not “more software.” It is a cleaner operating rhythm that the owner and team can actually run.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="section-grid">
+        <div class="section-label">§03 / delivery protocol</div>
+        <div class="section-body">
+          <h2 class="section-title">A controlled build process, not random development.</h2>
+          <div class="process">
+            <article class="step" data-step="01"><small>Diagnose</small><h3>Map the workflow.</h3><p>Understand the business process before proposing tools or screens.</p></article>
+            <article class="step" data-step="02"><small>Specify</small><h3>Define the smallest system.</h3><p>Choose the first useful version and remove unnecessary scope.</p></article>
+            <article class="step" data-step="03"><small>Build</small><h3>Launch the operating layer.</h3><p>Create the form, dashboard, CRM-lite tracker, automation, or site connection.</p></article>
+            <article class="step" data-step="04"><small>Handover</small><h3>Document and improve.</h3><p>Train the team, review usage, and grow the system after it works.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-grid">
+        <div class="section-label">§04 / request audit</div>
+        <div class="section-body">
+          <div class="contact">
+            <div class="contact-copy">
+              <div class="system-tag">low-risk first step</div>
+              <h2>Send one messy workflow.</h2>
+              <p>Tell Arzware what is slowing your business down. The first move is not a huge build — it is a diagnosis of the workflow and the smallest useful system to fix it.</p>
+              <a class="btn secondary" href="mailto:hello@arzware.com">Email hello@arzware.com</a>
+            </div>
+            <form class="contact-form" id="auditForm">
+              <div class="row"><div class="field"><label for="name">Name</label><input id="name" name="name" required></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div></div>
+              <div class="row"><div class="field"><label for="business">Business type</label><input id="business" name="business"></div><div class="field"><label for="timeline">Timeline</label><select id="timeline" name="timeline"><option>Exploring</option><option>This month</option><option>2–4 weeks</option><option>Urgent</option></select></div></div>
+              <div class="field"><label for="workflow">Messy workflow</label><textarea id="workflow" name="workflow" placeholder="Leads, bookings, reports, operations, support..." required></textarea></div>
+              <div class="field"><label for="tools">Current tools</label><input id="tools" name="tools" placeholder="WhatsApp, Sheets, Instagram, paper notes..."></div>
+              <button class="btn" type="submit">Book a Systems Audit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>ARZWARE / alternate website concept</div>
+      <a href="index.html">Current version</a>
+      <a href="https://github.com/admatieh/arzware" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">Copied</div>
+  <script>
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('arzware-concept-theme');
+    if(savedTheme) root.dataset.theme = savedTheme;
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      root.dataset.theme = root.dataset.theme === 'light' ? '' : 'light';
+      localStorage.setItem('arzware-concept-theme', root.dataset.theme || 'dark');
+    });
+    const toast = document.getElementById('toast');
+    document.querySelectorAll('.copy').forEach(button => {
+      button.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(button.dataset.copy); } catch(e) {}
+        button.textContent = 'Done';
+        toast.classList.add('show');
+        setTimeout(()=>{button.textContent='Copy';toast.classList.remove('show')}, 1200);
+      });
+    });
+    document.getElementById('auditForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const body = [
+        'Name: '+(data.get('name')||''),
+        'Email: '+(data.get('email')||''),
+        'Business type: '+(data.get('business')||''),
+        'Timeline: '+(data.get('timeline')||''),
+        '',
+        'Messy workflow:', data.get('workflow')||'',
+        '',
+        'Current tools:', data.get('tools')||''
+      ].join('\n');
+      location.href = 'mailto:hello@arzware.com?subject=' + encodeURIComponent('Systems Audit Request') + '&body=' + encodeURIComponent(body);
+    });
+  </script>
+</body>
+</html>
