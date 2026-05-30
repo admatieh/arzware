@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arzware — AI-Native Software Studio</title>
+  <meta name="description" content="Arzware is an AI-native software studio building websites, apps, dashboards, automations, CRM-lite systems and business workflows for small and growing companies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050608;
+      --bg-2:#0a0d12;
+      --ink:#f6f1e8;
+      --muted:#a99f91;
+      --soft:#d8cebd;
+      --line:rgba(246,241,232,.13);
+      --line-strong:rgba(246,241,232,.24);
+      --card:rgba(255,255,255,.045);
+      --card-2:rgba(255,255,255,.075);
+      --amber:#d69a45;
+      --blue:#57b8ff;
+      --cyan:#78f1ff;
+      --green:#8cffc4;
+      --danger:#ff7b7b;
+      --radius:28px;
+      --shadow:0 30px 90px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 72% 8%, rgba(87,184,255,.22), transparent 24rem),
+        radial-gradient(circle at 12% 18%, rgba(214,154,69,.16), transparent 24rem),
+        linear-gradient(180deg,#050608 0%, #090b10 45%, #030405 100%);
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.32;
+      background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:64px 64px;
+      mask-image:linear-gradient(to bottom,black,transparent 90%);
+    }
+    body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22256%22 height=%22256%22 filter=%22url(%23n)%22 opacity=%220.48%22/%3E%3C/svg%3E');opacity:.055;mix-blend-mode:screen}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
+    .nav{position:sticky;top:14px;z-index:20;margin:14px auto 0;width:min(1220px,calc(100% - 28px));display:flex;align-items:center;justify-content:space-between;padding:12px;border:1px solid var(--line);border-radius:999px;background:rgba(5,6,8,.72);backdrop-filter:blur(18px);box-shadow:0 12px 40px rgba(0,0,0,.25)}
+    .brand{display:flex;align-items:center;gap:12px;padding-left:8px}
+    .brand-mark{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(87,184,255,.22),rgba(214,154,69,.18));border:1px solid var(--line-strong);font-family:Playfair Display,serif;font-weight:800;color:var(--ink)}
+    .brand-name{font-family:Playfair Display,serif;font-weight:800;font-size:23px;letter-spacing:.02em}
+    .nav-links{display:flex;gap:18px;color:var(--muted);font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+    .nav-links a:hover{color:var(--ink)}
+    .nav-cta{border:1px solid rgba(214,154,69,.45);background:rgba(214,154,69,.1);padding:12px 17px;border-radius:999px;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;color:#ffe1b0}
+    .hero{min-height:82vh;display:grid;align-items:center;padding:54px 0 28px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+    .eyebrow{font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--amber);display:flex;gap:10px;align-items:center;margin-bottom:22px}.eyebrow:before{content:"";width:34px;height:1px;background:var(--amber)}
+    h1{font-family:Playfair Display,Georgia,serif;font-size:clamp(54px,7.4vw,112px);line-height:.9;margin:0 0 26px;letter-spacing:-.055em}.blue{color:#a8dcff}.amber{color:#ffd493}
+    .lead{font-size:clamp(18px,2vw,23px);line-height:1.55;color:var(--soft);max-width:720px;margin:0 0 30px}.lead strong{color:var(--ink);font-weight:700}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0}.btn{min-height:50px;border-radius:999px;padding:15px 22px;display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line-strong);font-weight:700}.btn.primary{background:var(--ink);color:#050608;border-color:var(--ink)}.btn.secondary{background:rgba(255,255,255,.04);color:var(--ink)}.btn:hover{transform:translateY(-2px);transition:.2s ease}.micro{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.micro div{border-top:1px solid var(--line);padding-top:14px}.micro span{display:block;font-family:JetBrains Mono,monospace;font-size:11px;color:var(--muted);text-transform:uppercase}.micro b{display:block;margin-top:6px;font-size:15px;color:var(--soft)}
+    .system-orb{position:relative;height:min(640px,76vh);min-height:520px;border:1px solid var(--line);border-radius:38px;background:radial-gradient(circle at 50% 42%,rgba(87,184,255,.22),transparent 22%),linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025));box-shadow:var(--shadow);overflow:hidden;perspective:1000px}.system-orb:before{content:"ARZWARE // OPERATING SYSTEM";position:absolute;top:18px;left:22px;font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.14em;color:var(--muted)}.system-orb:after{content:"";position:absolute;inset:18%;border:1px solid rgba(120,241,255,.18);border-radius:50%;box-shadow:0 0 90px rgba(87,184,255,.12) inset;animation:pulse 5s ease-in-out infinite}.orbit{position:absolute;inset:17%;border:1px solid rgba(246,241,232,.14);border-radius:50%;transform:rotateX(68deg) rotateZ(-18deg);animation:spin 18s linear infinite}.orbit.two{inset:25%;transform:rotateX(70deg) rotateZ(30deg);animation-duration:13s}.node{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--cyan);box-shadow:0 0 24px var(--cyan)}.node.n1{top:21%;left:48%}.node.n2{bottom:25%;right:20%;background:var(--amber);box-shadow:0 0 24px var(--amber)}.node.n3{bottom:20%;left:25%;background:var(--green);box-shadow:0 0 24px var(--green)}.core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:190px;height:190px;border-radius:42%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,rgba(246,241,232,.16),rgba(87,184,255,.08));border:1px solid var(--line-strong);box-shadow:0 0 80px rgba(87,184,255,.18);font-family:Playfair Display,serif;font-size:54px;font-weight:800}.floating-card{position:absolute;width:190px;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(8,10,14,.72);backdrop-filter:blur(12px);box-shadow:0 18px 40px rgba(0,0,0,.32)}.floating-card span{font-family:JetBrains Mono,monospace;font-size:10px;color:var(--amber);text-transform:uppercase}.floating-card b{display:block;margin-top:7px;font-size:14px}.fc1{top:86px;right:42px}.fc2{bottom:80px;left:38px}.fc3{right:36px;bottom:150px}.code-panel{position:absolute;left:26px;right:26px;bottom:25px;border:1px solid var(--line);background:rgba(0,0,0,.3);border-radius:20px;padding:18px;font-family:JetBrains Mono,monospace;font-size:12px;color:#c8eaff}.code-panel i{color:var(--muted);font-style:normal}.caret{display:inline-block;width:8px;height:14px;background:var(--cyan);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+    section{padding:95px 0}.section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:40px;margin-bottom:36px;border-top:1px solid var(--line);padding-top:28px}.kicker{font-family:JetBrains Mono,monospace;color:var(--amber);text-transform:uppercase;font-size:12px;letter-spacing:.15em}.section-head h2{font-family:Playfair Display,serif;font-size:clamp(36px,5vw,72px);line-height:.94;letter-spacing:-.04em;margin:0}.section-head p{color:var(--soft);font-size:19px;line-height:1.6;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.025));border-radius:var(--radius);padding:26px;min-height:260px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(87,184,255,.13),transparent 45%);opacity:0;transition:.25s}.card:hover:before{opacity:1}.card small{font-family:JetBrains Mono,monospace;color:var(--amber);text-transform:uppercase}.card h3{font-size:25px;margin:56px 0 14px}.card p{color:var(--muted);line-height:1.6;margin:0}.card.wide{grid-column:span 2}.inverse{background:var(--ink);color:#090b10;border-radius:42px;padding:70px 0}.inverse .kicker{color:#83591e}.inverse .section-head{border-top-color:rgba(0,0,0,.16)}.inverse .section-head p{color:#4c453d}.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{background:#090b10;color:var(--ink);border-radius:24px;padding:22px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}.step span{font-family:JetBrains Mono,monospace;color:var(--amber);font-size:12px}.step h3{margin:0;font-size:21px}.step p{color:#a99f91;line-height:1.5;margin:0}.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{border:1px solid var(--line);border-radius:34px;padding:34px;background:rgba(255,255,255,.045)}.panel h3{font-family:Playfair Display,serif;font-size:42px;line-height:1;margin:0 0 18px}.panel p,.panel li{color:var(--soft);line-height:1.65}.panel ul{padding-left:18px}.manifesto{font-family:Playfair Display,serif;font-size:clamp(38px,6.3vw,96px);line-height:1;letter-spacing:-.05em;max-width:1050px;margin:0}.manifesto em{color:var(--amber);font-style:italic}.ticker{border-block:1px solid var(--line);padding:18px 0;overflow:hidden;white-space:nowrap;color:var(--muted);font-family:JetBrains Mono,monospace;text-transform:uppercase;font-size:12px;letter-spacing:.12em}.ticker span{display:inline-block;animation:marquee 28s linear infinite}.footer{padding:70px 0 44px}.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:end}.footer h2{font-family:Playfair Display,serif;font-size:clamp(46px,7vw,100px);line-height:.9;margin:0}.footer p{color:var(--soft);font-size:18px;line-height:1.6}.reveal{opacity:1;transform:none;transition:.7s cubic-bezier(.2,.8,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}
+    @keyframes spin{to{transform:rotateX(68deg) rotateZ(342deg)}}@keyframes pulse{50%{transform:scale(1.05);opacity:.65}}@keyframes blink{50%{opacity:0}}@keyframes marquee{to{transform:translateX(-50%)}}
+    @media (max-width:900px){.nav-links{display:none}.hero-grid,.section-head,.split,.footer-grid{grid-template-columns:1fr}.system-orb{min-height:480px}.cards{grid-template-columns:1fr}.card.wide{grid-column:auto}.pipeline{grid-template-columns:1fr}.micro{grid-template-columns:1fr}.floating-card{display:none}section{padding:70px 0}h1{font-size:58px}.nav{border-radius:26px}.brand-name{font-size:20px}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#top" aria-label="Arzware home"><span class="brand-mark">A</span><span class="brand-name">Arzware</span></a>
+    <div class="nav-links"><a href="#systems">Systems</a><a href="#services">Services</a><a href="#talent">Talent</a><a href="#process">Process</a></div>
+    <a class="nav-cta" href="#contact">Start a build →</a>
+  </nav>
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">AI-native software studio</div>
+          <h1>Turning business chaos into <span class="blue">digital systems.</span></h1>
+          <p class="lead"><strong>Arzware</strong> builds practical software for small and growing businesses — websites, apps, dashboards, automations, CRM-lite tools and AI-assisted workflows that make operations cleaner, faster and easier to scale.</p>
+          <div class="actions"><a class="btn primary" href="#services">Explore systems →</a><a class="btn secondary" href="#talent">See the talent engine</a></div>
+          <div class="micro"><div><span>Position</span><b>Software modernization studio</b></div><div><span>Focus</span><b>Operations, sales & customer flow</b></div><div><span>Method</span><b>AI-assisted execution</b></div></div>
+        </div>
+        <div class="system-orb reveal" aria-label="Interactive Arzware operating system visual">
+          <div class="orbit"></div><div class="orbit two"></div><div class="node n1"></div><div class="node n2"></div><div class="node n3"></div><div class="core">A</div>
+          <div class="floating-card fc1"><span>Input</span><b>Messy workflows, WhatsApp follow-ups, paper records</b></div>
+          <div class="floating-card fc2"><span>Output</span><b>Dashboards, automations, booking flows, client systems</b></div>
+          <div class="floating-card fc3"><span>Talent</span><b>Interns learn through supervised real-client work</b></div>
+          <div class="code-panel"><i>$ arzware diagnose --business</i><br/>map pain → design system → launch MVP <span class="caret"></span></div>
+        </div>
+      </div>
+    </section>
+    <div class="ticker"><span>WEBSITES • WEB APPS • MOBILE APPS • DASHBOARDS • CRM-LITE • AUTOMATIONS • AI WORKFLOWS • CLIENT PORTALS • BOOKING FLOWS • BUSINESS SYSTEMS • WEBSITES • WEB APPS • MOBILE APPS • DASHBOARDS • CRM-LITE • AUTOMATIONS • AI WORKFLOWS • CLIENT PORTALS • BOOKING FLOWS • BUSINESS SYSTEMS • </span></div>
+    <section id="systems" class="container reveal">
+      <div class="section-head"><div class="kicker">§01 / The shift</div><div><h2>Not just a website. A cleaner way to operate.</h2><p>Arzware is built around one idea: technology should solve the real operational problem. Before choosing a tool, we understand how a business sells, communicates, tracks requests, follows up and serves customers.</p></div></div>
+      <div class="cards">
+        <article class="card wide"><small>Business problem</small><h3>Small teams are drowning in disconnected tools.</h3><p>Orders in WhatsApp, customer notes in memory, reports in spreadsheets, social media messages everywhere, and no clear operating rhythm.</p></article>
+        <article class="card"><small>Arzware response</small><h3>Simple systems first.</h3><p>The right answer may be a landing page, dashboard, bot, CRM-lite tracker, booking flow, app, or automation — not technology for its own sake.</p></article>
+        <article class="card"><small>Outcome</small><h3>Less friction. More control.</h3><p>Businesses get better follow-up, clearer tracking, faster service, and more confidence in daily operations.</p></article>
+        <article class="card wide"><small>AI-native model</small><h3>AI helps the team analyze, design and execute faster.</h3><p>AI is used to support discovery, workflow mapping, prototypes, documentation, testing, content and delivery — with human supervision and client trust at the center.</p></article>
+      </div>
+    </section>
+    <section id="services" class="inverse reveal">
+      <div class="container">
+        <div class="section-head"><div class="kicker">§02 / What we build</div><div><h2>Practical digital infrastructure for real businesses.</h2><p>Services are framed around business outcomes: selling better, organizing work, reducing repeated tasks, improving customer experience and making internal work visible.</p></div></div>
+        <div class="pipeline">
+          <div class="step"><span>01</span><h3>Websites & web apps</h3><p>Modern pages, portals, forms and client-facing digital experiences.</p></div>
+          <div class="step"><span>02</span><h3>Mobile apps</h3><p>Customer access, booking, field work, internal operations and service flows.</p></div>
+          <div class="step"><span>03</span><h3>Dashboards</h3><p>Track orders, leads, tasks, reports, requests and weekly progress.</p></div>
+          <div class="step"><span>04</span><h3>Automation</h3><p>Repeated reminders, form submissions, reporting and coordination workflows.</p></div>
+          <div class="step"><span>05</span><h3>AI workflows</h3><p>AI-assisted operations, content, research, support and internal knowledge systems.</p></div>
+        </div>
+      </div>
+    </section>
+    <section id="talent" class="container reveal">
+      <div class="section-head"><div class="kicker">§03 / The talent engine</div><div><h2>Real client work becomes a training ground.</h2><p>Arzware is designed as both a software studio and a supervised learning environment where interns and junior talent gain hands-on experience across real business projects.</p></div></div>
+      <div class="split">
+        <div class="panel"><h3>For businesses</h3><p>A lean, AI-assisted team that can diagnose problems and build useful digital solutions without the cost of hiring a full internal technology department.</p><ul><li>Business workflow audits</li><li>Prototype-first delivery</li><li>Clear documentation and launch support</li></ul></div>
+        <div class="panel"><h3>For young talent</h3><p>Interns learn through supervised work in software development, design, content, digital marketing, research, client communication, operations and AI-assisted workflows.</p><ul><li>Role-based responsibilities</li><li>Portfolio-building real tasks</li><li>Coaching, feedback and professional habits</li></ul></div>
+      </div>
+    </section>
+    <section id="process" class="container reveal">
+      <p class="manifesto">We do not start with “build an app.” We start with the business pain, then design the <em>smallest useful system</em> that can move the company forward.</p>
+      <div style="height:48px"></div>
+      <div class="cards">
+        <article class="card"><small>01 / Discover</small><h3>Map the real workflow.</h3><p>Understand customers, follow-ups, tools, bottlenecks, manual steps and missed opportunities.</p></article>
+        <article class="card"><small>02 / Design</small><h3>Choose the right system.</h3><p>Website, dashboard, automation, CRM, app, bot, portal or a focused combination.</p></article>
+        <article class="card"><small>03 / Build</small><h3>Launch the smallest useful version.</h3><p>Deliver an MVP that is clear, usable and ready to improve with real business feedback.</p></article>
+      </div>
+    </section>
+    <section id="contact" class="footer container reveal">
+      <div class="footer-grid"><div><div class="kicker">Build with Arzware</div><h2>Systems for the next operating layer of small business.</h2></div><div><p>For clients, partners and grant reviewers: Arzware is a focused AI-native software studio with a social-impact talent model — building digital systems while developing young technical talent through supervised real work.</p><div class="actions"><a class="btn primary" href="mailto:hello@arzware.com">hello@arzware.com</a><a class="btn secondary" href="#top">Back to top ↑</a></div></div></div>
+    </section>
+  </main>
+  <script>
+    const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.14});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    const orb=document.querySelector('.system-orb');
+    if(orb && !matchMedia('(prefers-reduced-motion: reduce)').matches){orb.addEventListener('pointermove',e=>{const r=orb.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;orb.style.transform=`rotateX(${y*-4}deg) rotateY(${x*5}deg)`});orb.addEventListener('pointerleave',()=>orb.style.transform='')}
+  </script>
+</body>
+</html>
