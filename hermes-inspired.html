@@ -3,182 +3,316 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arzware — Systems Agency Concept</title>
-  <meta name="description" content="A Hermes-inspired alternate concept for Arzware: a dark technical systems agency that turns messy workflows into operating systems for small businesses." />
+  <title>Arzware — AI-Native Websites & Business Systems</title>
+  <meta name="description" content="Arzware builds premium websites, CRM-lite workflows, booking systems, automations, dashboards, and AI-assisted operating layers for growing businesses." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root{
       color-scheme: dark;
-      --bg:#07100d;
-      --bg2:#0b1713;
-      --ink:#eee7d7;
-      --muted:#c4b9a8;
-      --dim:#9a907f;
-      --line:rgba(238,231,215,.20);
-      --line2:rgba(238,231,215,.34);
-      --panel:rgba(238,231,215,.035);
-      --panel2:rgba(238,231,215,.075);
-      --paper:#e9ddc5;
-      --paper-ink:#0b120f;
-      --acid:#c6ff70;
-      --amber:#c99147;
-      --teal:#72d7ba;
-      --danger:#ff745f;
-      --shadow:0 30px 100px rgba(0,0,0,.48);
+      --bg:#050806;
+      --bg2:#0a1410;
+      --ink:#f2ead9;
+      --muted:#d4c8b4;
+      --dim:#aaa08f;
+      --line:rgba(242,234,217,.17);
+      --line2:rgba(242,234,217,.32);
+      --panel:rgba(242,234,217,.045);
+      --panel2:rgba(242,234,217,.085);
+      --paper:#efe1c4;
+      --paper-ink:#07100d;
+      --acid:#caff6a;
+      --teal:#68e0be;
+      --amber:#d69a50;
+      --red:#ff765f;
+      --violet:#9a8cff;
+      --shadow:0 34px 110px rgba(0,0,0,.52);
+      --radius:0px;
     }
     [data-theme="light"]{
       color-scheme: light;
-      --bg:#e7dfd1;
-      --bg2:#d8cebd;
-      --ink:#101512;
-      --muted:#4a5048;
-      --dim:#757a70;
-      --line:rgba(16,21,18,.23);
-      --line2:rgba(16,21,18,.38);
-      --panel:rgba(16,21,18,.035);
-      --panel2:rgba(16,21,18,.08);
-      --paper:#17211c;
-      --paper-ink:#efe5d4;
-      --acid:#3a5f08;
-      --amber:#8a5b23;
-      --teal:#286b5b;
-      --danger:#9d3121;
+      --bg:#e9dfcf;
+      --bg2:#d7c9b6;
+      --ink:#101511;
+      --muted:#4d5249;
+      --dim:#777b70;
+      --line:rgba(16,21,17,.2);
+      --line2:rgba(16,21,17,.34);
+      --panel:rgba(16,21,17,.035);
+      --panel2:rgba(16,21,17,.075);
+      --paper:#101511;
+      --paper-ink:#f1e5d2;
+      --acid:#416805;
+      --teal:#286b5a;
+      --amber:#895d29;
+      --red:#a23926;
+      --violet:#514899;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;background:var(--bg)}
     body{
       margin:0;
-      background:
-        radial-gradient(circle at 52% 8%, rgba(114,215,186,.13), transparent 32rem),
-        radial-gradient(circle at 8% 78%, rgba(198,255,112,.08), transparent 22rem),
-        linear-gradient(180deg,var(--bg),var(--bg2) 48%,var(--bg));
-      color:var(--ink);
-      font-family:"Libre Baskerville", Georgia, serif;
       min-height:100vh;
       overflow-x:hidden;
+      background:
+        radial-gradient(circle at 55% 4%, rgba(104,224,190,.16), transparent 34rem),
+        radial-gradient(circle at 8% 40%, rgba(202,255,106,.08), transparent 28rem),
+        radial-gradient(circle at 88% 82%, rgba(214,154,80,.09), transparent 26rem),
+        linear-gradient(180deg,var(--bg),var(--bg2) 44%,var(--bg));
+      color:var(--ink);
+      font-family:"Libre Baskerville", Georgia, serif;
     }
-    body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:linear-gradient(var(--line) 1px, transparent 1px),linear-gradient(90deg,var(--line) 1px, transparent 1px);background-size:88px 88px;mask-image:linear-gradient(to bottom, black, black 68%, transparent)}
-    body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 300 300%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22 opacity=%220.42%22/%3E%3C/svg%3E');mix-blend-mode:multiply}
+    body:before{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;background-image:linear-gradient(var(--line) 1px, transparent 1px),linear-gradient(90deg,var(--line) 1px, transparent 1px);background-size:84px 84px;mask-image:linear-gradient(to bottom, black, black 72%, transparent)}
+    body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.11;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 280 280%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.82%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22280%22 height=%22280%22 filter=%22url(%23n)%22 opacity=%220.45%22/%3E%3C/svg%3E');mix-blend-mode:multiply}
     a{color:inherit;text-decoration:none}
     button,input,textarea,select{font:inherit;color:inherit}
-    .frame{width:min(1380px,calc(100% - 24px));margin:12px auto 0;border:1px solid var(--line2);box-shadow:var(--shadow);background:rgba(7,16,13,.55);backdrop-filter:blur(12px)}
-    [data-theme="light"] .frame{background:rgba(231,223,209,.68)}
-    .system-nav{display:grid;grid-template-columns:minmax(220px,1.4fr) repeat(5,minmax(92px,.55fr));border-bottom:1px solid var(--line2);min-height:74px}
-    .nav-cell{display:flex;align-items:center;justify-content:center;border-left:1px solid var(--line);padding:14px 16px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);position:relative;overflow:hidden}.nav-cell:first-child{border-left:0;justify-content:flex-start}.nav-cell:before{content:"";position:absolute;inset:auto 0 0;height:0;background:var(--ink);transition:.18s}.nav-cell:hover:before,.nav-cell:focus-visible:before{height:3px}.nav-cell:hover{color:var(--ink)}
-    .brand{gap:14px}.brand img{width:46px;height:42px;object-fit:contain;filter:invert(94%) sepia(12%) saturate(511%) hue-rotate(349deg) brightness(104%) contrast(92%) drop-shadow(0 0 18px rgba(198,255,112,.18))}.brand span{font-family:"Archivo Expanded",Inter,sans-serif;font-weight:800;font-size:18px;color:var(--ink);letter-spacing:.18em}.brand small{display:block;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.22em;color:var(--dim);margin-top:3px}
-    [data-theme="light"] .brand img{filter:brightness(0) saturate(1)}
-    .theme-btn{background:none;border:0;width:100%;height:100%;cursor:pointer}.switch{width:54px;height:26px;border:1px solid var(--line2);border-radius:999px;padding:3px;display:inline-flex;align-items:center}.switch i{display:block;width:18px;height:18px;background:var(--ink);border-radius:50%;transition:.2s}[data-theme="light"] .switch i{transform:translateX(26px)}
-    .hero{min-height:calc(100vh - 87px);display:grid;grid-template-rows:auto 1fr auto}.hero-main{display:grid;grid-template-columns:1fr 390px;border-bottom:1px solid var(--line2)}
-    .hero-copy{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:88px 42px 70px;position:relative;min-height:620px}.system-tag{font-family:"IBM Plex Mono",monospace;color:var(--acid);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:28px}.hero h1{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(46px,7.7vw,120px);line-height:.85;letter-spacing:-.075em;text-transform:uppercase;margin:0;text-wrap:balance;max-width:980px}.hero p{font-size:clamp(16px,1.35vw,20px);line-height:1.76;color:var(--muted);max-width:760px;margin:30px auto 0}.hero p strong{color:var(--ink)}
-    .command-stack{width:min(760px,100%);display:grid;gap:12px;margin-top:38px}.command{display:grid;grid-template-columns:126px 1fr 72px;border:1px solid var(--line2);background:rgba(0,0,0,.16);font-family:"IBM Plex Mono",monospace;min-height:54px}.cmd-label{display:flex;align-items:center;padding:0 16px;border-right:1px solid var(--line);font-size:11px;color:var(--acid);letter-spacing:.12em;text-transform:uppercase}.command code{display:flex;align-items:center;padding:0 16px;font-size:13px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.copy{border:0;border-left:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:11px}.copy:hover{background:var(--paper);color:var(--paper-ink)}
-    .side-panel{border-left:1px solid var(--line2);display:grid;grid-template-rows:auto 1fr auto;min-height:620px;background:linear-gradient(180deg,rgba(238,231,215,.06),transparent)}.side-top,.side-bottom{padding:18px;border-bottom:1px solid var(--line2);font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:11px;letter-spacing:.12em;color:var(--dim);display:flex;justify-content:space-between;gap:12px}.side-bottom{border-top:1px solid var(--line2);border-bottom:0}.schematic{position:relative;overflow:hidden;min-height:440px}.schematic:before{content:"";position:absolute;inset:42px;border:1px solid var(--line);background:radial-gradient(circle at 50% 50%, rgba(198,255,112,.14), transparent 38%),linear-gradient(45deg,transparent 49%,var(--line) 50%,transparent 51%)}.orb{position:absolute;left:50%;top:50%;width:178px;height:178px;border:1px solid var(--line2);border-radius:50%;transform:translate(-50%,-50%);display:grid;place-items:center;background:rgba(238,231,215,.04);box-shadow:0 0 80px rgba(114,215,186,.12)}.orb img{width:92px;filter:invert(94%) sepia(12%) saturate(511%) hue-rotate(349deg) brightness(104%) contrast(92%)}[data-theme="light"] .orb img{filter:brightness(0)}.ring{position:absolute;border:1px solid var(--line);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);animation:spin 22s linear infinite}.r1{width:270px;height:270px}.r2{width:350px;height:350px;animation-duration:35s;animation-direction:reverse}.r3{width:430px;height:430px;animation-duration:48s}.node{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--acid);box-shadow:0 0 18px var(--acid)}.n1{left:22%;top:31%}.n2{right:18%;top:42%;background:var(--teal);box-shadow:0 0 18px var(--teal)}.n3{left:31%;bottom:23%;background:var(--amber);box-shadow:0 0 18px var(--amber)}.n4{right:30%;bottom:19%}
-    .ticker{display:flex;overflow:hidden;border-bottom:1px solid var(--line2);font-family:"IBM Plex Mono",monospace;text-transform:uppercase;color:var(--dim);font-size:12px;letter-spacing:.16em}.ticker div{display:flex;gap:28px;white-space:nowrap;padding:15px 0;animation:marquee 28s linear infinite}.ticker span{padding-left:28px}.metrics{display:grid;grid-template-columns:repeat(4,1fr)}.metric{border-left:1px solid var(--line);padding:20px 22px;font-family:"IBM Plex Mono",monospace}.metric:first-child{border-left:0}.metric small{display:block;color:var(--dim);font-size:10px;letter-spacing:.14em;text-transform:uppercase}.metric b{display:block;color:var(--ink);font-size:18px;margin-top:8px;font-family:"Libre Baskerville",Georgia,serif;font-weight:700}
-    section{border-bottom:1px solid var(--line2)}.section-grid{display:grid;grid-template-columns:280px 1fr}.section-label{border-right:1px solid var(--line2);padding:28px 22px;font-family:"IBM Plex Mono",monospace;color:var(--acid);font-size:12px;text-transform:uppercase;letter-spacing:.15em}.section-body{padding:38px}.section-title{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(34px,5vw,78px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:0 0 22px;max-width:930px}.section-lead{font-size:18px;line-height:1.75;color:var(--muted);max-width:860px;margin:0 0 34px}
-    .module-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line2);border-left:1px solid var(--line2)}.module{min-height:245px;border-right:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:22px;background:var(--panel);position:relative}.module:after{content:attr(data-id);position:absolute;right:18px;top:16px;color:var(--dim);font-family:"IBM Plex Mono",monospace;font-size:11px}.module h3{font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.035em;line-height:1.02;font-size:24px;margin:44px 0 14px}.module p{color:var(--muted);line-height:1.65;margin:0}.module ul{margin:18px 0 0;padding-left:18px;color:var(--muted);line-height:1.8}.module:hover{background:var(--panel2)}
-    .split{display:grid;grid-template-columns:1.1fr .9fr;border:1px solid var(--line2)}.terminal{background:rgba(0,0,0,.22);min-height:470px}.term-top{height:42px;border-bottom:1px solid var(--line2);display:flex;align-items:center;gap:8px;padding:0 14px;font-family:"IBM Plex Mono",monospace;color:var(--dim);font-size:11px;text-transform:uppercase}.dot{width:9px;height:9px;border:1px solid var(--line2);border-radius:50%}.term-lines{padding:24px;font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.8;color:var(--muted)}.prompt{color:var(--acid)}.ok{color:var(--teal)}.warn{color:var(--amber)}.diagram{padding:28px;min-height:470px;background:radial-gradient(circle at 70% 26%,rgba(198,255,112,.12),transparent 30%),var(--panel);display:flex;flex-direction:column;justify-content:space-between}.route{display:grid;gap:14px}.route-row{display:grid;grid-template-columns:130px 1fr;border:1px solid var(--line2);min-height:58px}.route-row span{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--acid);letter-spacing:.12em;text-transform:uppercase;border-right:1px solid var(--line);display:flex;align-items:center;padding:0 14px}.route-row b{display:flex;align-items:center;padding:0 16px;font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.035em}.diagram-note{font-size:17px;color:var(--muted);line-height:1.7;margin:26px 0 0}
-    .process{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line2);border-left:0}.step{border-left:1px solid var(--line2);padding:24px;min-height:270px;position:relative}.step small{font-family:"IBM Plex Mono",monospace;color:var(--acid);letter-spacing:.14em;text-transform:uppercase}.step h3{font-family:"Archivo Expanded",Inter,sans-serif;line-height:1.02;text-transform:uppercase;letter-spacing:-.045em;font-size:25px;margin:70px 0 14px}.step p{color:var(--muted);line-height:1.62;margin:0}.step:before{content:attr(data-step);position:absolute;top:18px;right:18px;font-family:"IBM Plex Mono",monospace;color:var(--dim)}
-    .contact{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line2);background:rgba(0,0,0,.12)}.contact-copy{padding:32px;border-right:1px solid var(--line2)}.contact-copy h2{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(34px,5vw,70px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:16px 0}.contact-copy p{color:var(--muted);line-height:1.75}.contact-form{padding:26px;display:grid;gap:12px}.field{display:grid;gap:7px}.field label{font-family:"IBM Plex Mono",monospace;color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.14em}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line2);box-shadow:inset 0 0 0 1px rgba(238,231,215,.04);background:transparent;padding:13px 14px;outline:none}.field textarea{min-height:118px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{background:var(--panel2);border-color:var(--acid)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:var(--paper);color:var(--paper-ink);min-height:54px;padding:0 18px;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.1em;font-size:12px;cursor:pointer}.btn:hover{filter:brightness(1.08)}.btn.secondary{background:transparent;color:var(--ink)}
-    .footer{display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--line2);font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em}.footer div,.footer a{padding:18px 22px;border-left:1px solid var(--line)}.footer div:first-child{border-left:0}
-    .toast{position:fixed;right:18px;bottom:18px;border:1px solid var(--line2);background:var(--paper);color:var(--paper-ink);padding:12px 14px;font-family:"IBM Plex Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;opacity:0;transform:translateY(8px);transition:.2s;z-index:10}.toast.show{opacity:1;transform:none}
-    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-    @media (max-width:1050px){.system-nav{grid-template-columns:1fr repeat(2,110px)}.system-nav .hide-md{display:none}.hero-main,.section-grid,.split,.contact{grid-template-columns:1fr}.side-panel,.section-label,.contact-copy{border-left:0;border-right:0}.side-panel{border-top:1px solid var(--line2)}.module-grid{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}.metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(3){border-left:0;border-top:1px solid var(--line)}.metric:nth-child(4){border-top:1px solid var(--line)}}
-    @media (max-width:680px){.frame{width:calc(100% - 12px);margin-top:6px}.system-nav{grid-template-columns:1fr 76px}.system-nav .mobile-hide{display:none}.brand span{font-size:14px}.hero-copy{padding:58px 18px;min-height:560px}.hero h1{font-size:44px;line-height:.92}.command{grid-template-columns:1fr 64px}.cmd-label{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line);min-height:38px}.side-panel{min-height:520px}.section-body{padding:24px 16px}.module-grid,.process,.metrics,.row,.footer{grid-template-columns:1fr}.metric,.metric:nth-child(3),.metric:nth-child(4){border-left:0;border-top:1px solid var(--line)}.module{min-height:220px}.footer div,.footer a{border-left:0;border-top:1px solid var(--line);padding:14px}.footer div:first-child{border-top:0}.route-row{grid-template-columns:1fr}.route-row span{border-right:0;border-bottom:1px solid var(--line);min-height:36px}.contact-form{padding:18px}}
-    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+    ::selection{background:var(--acid);color:#06100c}
+    .frame{width:min(1440px,calc(100% - 24px));margin:12px auto;border:1px solid var(--line2);box-shadow:var(--shadow);background:rgba(5,8,6,.68);backdrop-filter:blur(16px)}
+    [data-theme="light"] .frame{background:rgba(233,223,207,.76)}
+    .mono{font-family:"IBM Plex Mono",monospace}.display{font-family:"Archivo Expanded",Inter,sans-serif}
+    .nav{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:minmax(230px,1.25fr) repeat(6,minmax(90px,.5fr));border-bottom:1px solid var(--line2);background:rgba(5,8,6,.78);backdrop-filter:blur(14px)}
+    [data-theme="light"] .nav{background:rgba(233,223,207,.82)}
+    .nav-cell{min-height:72px;display:flex;align-items:center;justify-content:center;border-left:1px solid var(--line);padding:12px 14px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);position:relative;overflow:hidden}.nav-cell:first-child{border-left:0;justify-content:flex-start}.nav-cell:before{content:"";position:absolute;left:0;right:0;bottom:0;height:0;background:var(--ink);transition:.2s}.nav-cell:hover:before,.nav-cell:focus-visible:before{height:3px}.nav-cell:hover{color:var(--ink)}
+    .brand{gap:14px}.brand img{width:46px;height:42px;object-fit:contain;filter:invert(94%) sepia(12%) saturate(511%) hue-rotate(349deg) brightness(104%) contrast(92%) drop-shadow(0 0 18px rgba(202,255,106,.18))}.brand span{font-family:"Archivo Expanded",Inter,sans-serif;font-weight:800;font-size:17px;color:var(--ink);letter-spacing:.18em}.brand small{display:block;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.22em;color:var(--dim);margin-top:3px}.theme-btn{background:none;border:0;cursor:pointer}.switch{width:54px;height:26px;border:1px solid var(--line2);border-radius:999px;padding:3px;display:inline-flex;align-items:center}.switch i{display:block;width:18px;height:18px;background:var(--ink);border-radius:50%;transition:.2s}[data-theme="light"] .switch i{transform:translateX(26px)}[data-theme="light"] .brand img{filter:brightness(0)}
+
+    .hero{min-height:calc(100vh - 96px);display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,480px);border-bottom:1px solid var(--line2)}
+    .hero-copy{padding:clamp(54px,7vw,96px) clamp(22px,5vw,72px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}.eyebrow{font-family:"IBM Plex Mono",monospace;color:var(--acid);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px}.hero h1{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(48px,8.2vw,128px);line-height:.84;letter-spacing:-.078em;text-transform:uppercase;margin:0;text-wrap:balance;max-width:1050px}.hero-lead{font-size:clamp(16px,1.45vw,21px);line-height:1.78;color:var(--muted);max-width:830px;margin:30px 0 0}.hero-lead strong{color:var(--ink)}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:var(--paper);color:var(--paper-ink);min-height:54px;padding:0 18px;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.1em;font-size:12px;cursor:pointer}.btn:hover{filter:brightness(1.08)}.btn.secondary{background:transparent;color:var(--ink)}
+    .proof-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line2);margin-top:42px;max-width:890px}.proof{padding:18px 18px;border-left:1px solid var(--line);background:var(--panel)}.proof:first-child{border-left:0}.proof small{display:block;color:var(--dim);font-family:"IBM Plex Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em}.proof b{display:block;margin-top:8px;font-size:17px;line-height:1.35}
+
+    .visual-panel{border-left:1px solid var(--line2);display:grid;grid-template-rows:auto 1fr auto;min-height:620px;background:linear-gradient(180deg,rgba(242,234,217,.07),transparent)}.panel-top,.panel-bottom{padding:17px 18px;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:11px;letter-spacing:.13em;color:var(--dim);display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line2)}.panel-bottom{border-top:1px solid var(--line2);border-bottom:0}.rasi-core{position:relative;min-height:500px;overflow:hidden;perspective:950px}.rasi-core:before{content:"";position:absolute;inset:38px;border:1px solid var(--line);background:radial-gradient(circle at 50% 52%, rgba(202,255,106,.13), transparent 32%),linear-gradient(35deg,transparent 49.7%,var(--line) 50%,transparent 50.3%),linear-gradient(-35deg,transparent 49.7%,var(--line) 50%,transparent 50.3%)}.stage{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .25s ease-out}.core-orb{position:absolute;left:50%;top:50%;width:184px;height:184px;border-radius:34% 66% 51% 49% / 44% 38% 62% 56%;transform:translate(-50%,-50%) translateZ(50px);display:grid;place-items:center;border:1px solid var(--line2);background:radial-gradient(circle at 32% 24%,rgba(255,255,255,.2),transparent 28%),radial-gradient(circle at 72% 72%,rgba(104,224,190,.2),transparent 38%),rgba(242,234,217,.045);box-shadow:0 0 80px rgba(104,224,190,.18), inset 0 0 45px rgba(202,255,106,.08);animation:morph 9s ease-in-out infinite}.core-orb img{width:88px;filter:invert(94%) sepia(12%) saturate(511%) hue-rotate(349deg) brightness(104%) contrast(92%)}.orbit{position:absolute;left:50%;top:50%;border:1px solid var(--line2);border-radius:50%;transform-style:preserve-3d}.o1{width:320px;height:112px;transform:translate(-50%,-50%) rotateX(66deg) rotateZ(8deg);animation:orbit 18s linear infinite}.o2{width:410px;height:150px;transform:translate(-50%,-50%) rotateX(62deg) rotateZ(-38deg);animation:orbit 26s linear reverse infinite}.o3{width:250px;height:250px;transform:translate(-50%,-50%) rotateY(68deg) rotateZ(22deg);animation:orbit 31s linear infinite}.pulse{position:absolute;width:11px;height:11px;border-radius:50%;background:var(--acid);box-shadow:0 0 20px var(--acid)}.p1{left:18%;top:29%}.p2{right:17%;top:40%;background:var(--teal);box-shadow:0 0 20px var(--teal)}.p3{left:28%;bottom:21%;background:var(--amber);box-shadow:0 0 20px var(--amber)}.p4{right:27%;bottom:18%;background:var(--violet);box-shadow:0 0 20px var(--violet)}.float-card{position:absolute;border:1px solid var(--line2);background:rgba(5,8,6,.58);backdrop-filter:blur(10px);padding:12px 13px;font-family:"IBM Plex Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);box-shadow:0 15px 50px rgba(0,0,0,.28)}[data-theme="light"] .float-card{background:rgba(233,223,207,.68)}.fc1{left:28px;top:88px}.fc2{right:28px;top:190px}.fc3{left:42px;bottom:98px}.float-card b{display:block;color:var(--ink);font-family:"Libre Baskerville",Georgia,serif;font-size:16px;text-transform:none;letter-spacing:0;margin-top:6px}
+
+    .ticker{display:flex;overflow:hidden;border-bottom:1px solid var(--line2);font-family:"IBM Plex Mono",monospace;text-transform:uppercase;color:var(--dim);font-size:12px;letter-spacing:.16em}.ticker div{display:flex;gap:28px;white-space:nowrap;padding:15px 0;animation:marquee 32s linear infinite}.ticker span{padding-left:28px}
+    section{border-bottom:1px solid var(--line2);scroll-margin-top:92px}.section-grid{display:grid;grid-template-columns:290px 1fr}.section-label{border-right:1px solid var(--line2);padding:30px 22px;font-family:"IBM Plex Mono",monospace;color:var(--acid);font-size:12px;text-transform:uppercase;letter-spacing:.15em}.section-body{padding:42px}.section-title{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(34px,5.4vw,82px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:0 0 22px;max-width:980px}.section-lead{font-size:18px;line-height:1.78;color:var(--muted);max-width:900px;margin:0 0 34px}.section-lead strong{color:var(--ink)}
+    .build-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line2);border-left:0}.build-card{min-height:300px;padding:24px;border-left:1px solid var(--line2);background:var(--panel);position:relative}.build-card:after{content:attr(data-id);position:absolute;top:18px;right:18px;color:var(--dim);font-family:"IBM Plex Mono",monospace;font-size:11px}.build-card small{font-family:"IBM Plex Mono",monospace;color:var(--acid);font-size:11px;letter-spacing:.13em;text-transform:uppercase}.build-card h3{font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.045em;line-height:1.02;font-size:25px;margin:64px 0 14px}.build-card p{color:var(--muted);line-height:1.66;margin:0}.build-card:hover{background:var(--panel2)}
+    .offer-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line2);border-left:0;background:rgba(0,0,0,.12)}.offer-card{border-left:1px solid var(--line2);min-height:360px;padding:24px;position:relative;background:var(--panel)}.offer-card.featured{background:linear-gradient(180deg,rgba(202,255,106,.105),rgba(242,234,217,.035));box-shadow:inset 0 0 0 1px rgba(202,255,106,.2)}.offer-card small{font-family:"IBM Plex Mono",monospace;color:var(--acid);font-size:11px;letter-spacing:.14em;text-transform:uppercase}.offer-card h3{font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.045em;line-height:1.02;font-size:28px;margin:34px 0 14px}.price{font-size:30px;color:var(--ink);margin:18px 0 12px}.offer-card p,.offer-card li{color:var(--muted);line-height:1.68}.offer-card ul{margin:18px 0 0;padding-left:18px}.note{margin-top:22px;border:1px solid var(--line2);padding:18px 20px;font-family:"IBM Plex Mono",monospace;color:var(--muted);line-height:1.7;background:var(--panel)}.note b{color:var(--ink)}
+    .system-map{display:grid;grid-template-columns:1fr .92fr;border:1px solid var(--line2)}.console{background:rgba(0,0,0,.24);min-height:500px}.console-top{height:42px;border-bottom:1px solid var(--line2);display:flex;align-items:center;gap:8px;padding:0 14px;font-family:"IBM Plex Mono",monospace;color:var(--dim);font-size:11px;text-transform:uppercase}.dot{width:9px;height:9px;border:1px solid var(--line2);border-radius:50%}.lines{padding:24px;font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.85;color:var(--muted)}.prompt{color:var(--acid)}.ok{color:var(--teal)}.warn{color:var(--amber)}.flow{padding:28px;background:radial-gradient(circle at 70% 24%,rgba(202,255,106,.11),transparent 28%),var(--panel);display:grid;gap:14px;align-content:center}.flow-row{display:grid;grid-template-columns:138px 1fr;border:1px solid var(--line2);min-height:62px}.flow-row span{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--acid);letter-spacing:.12em;text-transform:uppercase;border-right:1px solid var(--line);display:flex;align-items:center;padding:0 14px}.flow-row b{display:flex;align-items:center;padding:0 16px;font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.035em}.flow p{font-size:17px;color:var(--muted);line-height:1.72;margin:18px 0 0}
+    .use-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line2);border-left:0}.use-card{border-left:1px solid var(--line2);padding:24px;min-height:245px;background:var(--panel)}.use-card small{font-family:"IBM Plex Mono",monospace;color:var(--acid);font-size:11px;text-transform:uppercase;letter-spacing:.13em}.use-card h3{font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;font-size:24px;letter-spacing:-.04em;line-height:1.05;margin:34px 0 12px}.use-card p{color:var(--muted);line-height:1.68;margin:0}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line2);border-left:0}.step{border-left:1px solid var(--line2);padding:24px;min-height:282px;position:relative}.step:before{content:attr(data-step);position:absolute;top:18px;right:18px;font-family:"IBM Plex Mono",monospace;color:var(--dim)}.step small{font-family:"IBM Plex Mono",monospace;color:var(--acid);letter-spacing:.14em;text-transform:uppercase}.step h3{font-family:"Archivo Expanded",Inter,sans-serif;line-height:1.02;text-transform:uppercase;letter-spacing:-.045em;font-size:25px;margin:72px 0 14px}.step p{color:var(--muted);line-height:1.62;margin:0}
+    .impact{display:grid;grid-template-columns:.85fr 1.15fr;border:1px solid var(--line2)}.impact-copy{padding:30px;border-right:1px solid var(--line2);background:linear-gradient(180deg,rgba(104,224,190,.08),transparent)}.impact-copy h3{font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.05em;line-height:.95;font-size:clamp(32px,4vw,58px);margin:16px 0}.impact-copy p{color:var(--muted);line-height:1.75}.roles{display:grid;grid-template-columns:repeat(2,1fr)}.role{min-height:160px;padding:22px;border-left:1px solid var(--line2);border-bottom:1px solid var(--line2);background:var(--panel)}.role:nth-child(odd){border-left:0}.role small{font-family:"IBM Plex Mono",monospace;color:var(--acid);font-size:10px;letter-spacing:.13em;text-transform:uppercase}.role b{display:block;margin-top:18px;font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.04em}.role p{margin:10px 0 0;color:var(--muted);line-height:1.55;font-size:14px}
+
+    .inline-call{color:var(--acid);font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;border-bottom:1px solid rgba(202,255,106,.45)}.inline-call:hover{color:var(--ink);border-color:var(--ink)}
+    .booking-system{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line2);background:rgba(0,0,0,.14);overflow:hidden}.booking-copy{padding:32px;border-right:1px solid var(--line2);background:radial-gradient(circle at 20% 18%,rgba(202,255,106,.12),transparent 30%),var(--panel)}.booking-copy h3{font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.055em;line-height:.92;font-size:clamp(34px,4.8vw,70px);margin:18px 0}.booking-copy p{color:var(--muted);line-height:1.75}.booking-panel{padding:24px;display:grid;gap:16px}.booking-types{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.booking-type{border:1px solid var(--line2);background:transparent;padding:14px;text-align:left;cursor:pointer;min-height:104px}.booking-type b{display:block;font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;font-size:14px;letter-spacing:-.03em}.booking-type span{display:block;margin-top:8px;color:var(--dim);font-family:"IBM Plex Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.11em}.booking-type.active{background:rgba(202,255,106,.12);border-color:rgba(202,255,106,.65);box-shadow:inset 0 0 0 1px rgba(202,255,106,.16)}.booking-calendar{display:grid;grid-template-columns:1fr 1fr;gap:12px}.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.slot{border:1px solid var(--line2);background:var(--panel);min-height:42px;font-family:"IBM Plex Mono",monospace;font-size:11px;cursor:pointer}.slot.active{background:var(--paper);color:var(--paper-ink)}.booking-summary{border:1px solid var(--line2);background:rgba(0,0,0,.2);padding:16px;font-family:"IBM Plex Mono",monospace;color:var(--muted);line-height:1.7;font-size:12px}.booking-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.booking-note{font-size:12px;color:var(--dim);font-family:"IBM Plex Mono",monospace;line-height:1.6}.booking-confirm{display:none;border:1px solid rgba(202,255,106,.55);background:rgba(202,255,106,.1);padding:14px;color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.6}.booking-confirm.show{display:block}
+
+    .contact{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line2);background:rgba(0,0,0,.13)}.contact-copy{padding:32px;border-right:1px solid var(--line2)}.contact-copy h2{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(34px,5vw,72px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:16px 0}.contact-copy p{color:var(--muted);line-height:1.75}.contact-form{padding:26px;display:grid;gap:12px}.field{display:grid;gap:7px}.field label{font-family:"IBM Plex Mono",monospace;color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.14em}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line2);box-shadow:inset 0 0 0 1px rgba(242,234,217,.04);background:transparent;padding:13px 14px;outline:none}.field textarea{min-height:124px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{background:var(--panel2);border-color:var(--acid)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .footer{display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--line2);font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em}.footer div,.footer a{padding:18px 22px;border-left:1px solid var(--line)}.footer div:first-child{border-left:0}.toast{position:fixed;right:18px;bottom:18px;border:1px solid var(--line2);background:var(--paper);color:var(--paper-ink);padding:12px 14px;font-family:"IBM Plex Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;opacity:0;transform:translateY(8px);transition:.2s;z-index:30}.toast.show{opacity:1;transform:none}
+
+
+    .living-strip{display:grid;grid-template-columns:1fr auto;border-bottom:1px solid var(--line2);overflow:hidden;background:linear-gradient(90deg,rgba(202,255,106,.06),transparent 42%,rgba(104,224,190,.05))}.grid-message{position:relative;overflow:hidden;border-right:1px solid var(--line2);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:42px 42px}.grid-message-track{display:flex;gap:34px;width:max-content;padding:18px 0;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--muted);animation:marqueeRight 34s linear infinite}.grid-message-track span{padding-left:34px}.live-control{display:flex;align-items:center;gap:12px;padding:0 22px;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.13em;font-size:11px;color:var(--muted);white-space:nowrap}.live-dot{width:18px;height:18px;border-radius:50%;background:var(--acid);box-shadow:0 0 0 0 rgba(202,255,106,.55),0 0 18px rgba(202,255,106,.8);animation:livePulse 1.55s ease-in-out infinite}.live-switch{width:52px;height:28px;border:1px solid var(--line2);border-radius:999px;padding:4px;background:rgba(202,255,106,.1);position:relative}.live-switch:before{content:"";display:block;width:18px;height:18px;border-radius:50%;background:var(--acid);box-shadow:0 0 18px var(--acid);animation:switchOnOff 2.8s ease-in-out infinite}
+    .knight-grid{display:grid;grid-template-columns:.95fr 1.05fr;border:1px solid var(--line2);background:rgba(0,0,0,.12);overflow:hidden}.knight-copy{padding:30px;border-right:1px solid var(--line2);display:flex;flex-direction:column;justify-content:space-between;min-height:420px}.knight-copy h3{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(32px,4.6vw,70px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase;margin:18px 0}.knight-copy p{color:var(--muted);line-height:1.76;margin:0}.knight-scene{position:relative;min-height:420px;overflow:hidden;background:radial-gradient(circle at 50% 28%,rgba(202,255,106,.13),transparent 28%),radial-gradient(circle at 76% 68%,rgba(104,224,190,.10),transparent 34%),var(--panel)}.knight-scene:before{content:"";position:absolute;inset:32px;border:1px solid var(--line);transform:rotate(-2deg);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px}.knight-svg{position:absolute;left:50%;top:52%;width:min(470px,86%);transform:translate(-50%,-50%) rotate(-4deg);filter:drop-shadow(0 30px 70px rgba(0,0,0,.45));animation:floatKnight 5.8s ease-in-out infinite}.tilted-object{position:absolute;border:1px solid var(--line2);background:rgba(242,234,217,.055);backdrop-filter:blur(8px);font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-size:10px;padding:12px 14px;box-shadow:0 20px 60px rgba(0,0,0,.24)}.tilt-a{left:7%;top:17%;transform:rotate(-10deg)}.tilt-b{right:8%;top:18%;transform:rotate(8deg)}.tilt-c{right:10%;bottom:12%;transform:rotate(-6deg)}
+    .ai-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line2)}.ai-logos{display:grid;grid-template-columns:repeat(3,1fr);border-right:1px solid var(--line2)}.ai-logo{min-height:118px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;place-items:center;text-align:center;padding:14px;background:var(--panel);position:relative;overflow:hidden}.ai-logo:nth-child(3n){border-right:0}.ai-logo:before{content:"";position:absolute;inset:auto 12px 12px;height:3px;background:var(--acid);transform:scaleX(.18);transform-origin:left;opacity:.75}.ai-logo b{font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.03em;font-size:15px}.ai-logo small{display:block;margin-top:8px;color:var(--dim);font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:9px}.command-live{min-height:354px;background:rgba(0,0,0,.25)}.cmd-screen{padding:24px;font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.85;color:var(--muted)}.typed-line{color:var(--acid);min-height:24px}.typed-cursor{display:inline-block;width:8px;height:1.2em;background:var(--acid);vertical-align:-3px;margin-left:4px;animation:blink .9s steps(2,end) infinite}.cmd-stream{margin-top:16px;display:grid;gap:8px}.cmd-stream div{opacity:0;transform:translateY(6px);animation:streamIn 8s linear infinite}.cmd-stream div:nth-child(2){animation-delay:1.2s}.cmd-stream div:nth-child(3){animation-delay:2.4s}.cmd-stream div:nth-child(4){animation-delay:3.6s}.cmd-stream div:nth-child(5){animation-delay:4.8s}.cmd-stream .ok{color:var(--teal)}
+
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes orbit{to{rotate:360deg}}@keyframes morph{0%,100%{border-radius:34% 66% 51% 49% / 44% 38% 62% 56%;transform:translate(-50%,-50%) translateZ(50px) rotate(0deg)}50%{border-radius:55% 45% 41% 59% / 58% 42% 58% 42%;transform:translate(-50%,-53%) translateZ(65px) rotate(6deg)}}@keyframes marqueeRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}@keyframes livePulse{0%,100%{opacity:.55;box-shadow:0 0 0 0 rgba(202,255,106,.45),0 0 16px rgba(202,255,106,.7)}50%{opacity:1;box-shadow:0 0 0 10px rgba(202,255,106,0),0 0 34px rgba(202,255,106,1)}}@keyframes switchOnOff{0%,18%,100%{transform:translateX(0);opacity:.55}38%,72%{transform:translateX(22px);opacity:1}}@keyframes floatKnight{0%,100%{transform:translate(-50%,-50%) rotate(-4deg) translateY(0)}50%{transform:translate(-50%,-52%) rotate(-2deg) translateY(-10px)}}@keyframes blink{50%{opacity:0}}@keyframes streamIn{0%,12%{opacity:0;transform:translateY(6px)}18%,72%{opacity:1;transform:none}88%,100%{opacity:0;transform:translateY(-6px)}}
+    @media (max-width:1120px){.knight-grid,.ai-grid,.living-strip,.booking-system{grid-template-columns:1fr}.knight-copy,.ai-logos,.grid-message,.booking-copy{border-right:0}.ai-logos{grid-template-columns:repeat(2,1fr)}.nav{grid-template-columns:1fr repeat(3,108px)}.hide-lg{display:none}.hero,.section-grid,.system-map,.impact,.contact,.offer-strip{grid-template-columns:1fr}.visual-panel,.section-label,.impact-copy,.contact-copy{border-left:0;border-right:0}.visual-panel{border-top:1px solid var(--line2)}.build-grid{grid-template-columns:repeat(2,1fr)}.use-grid{grid-template-columns:1fr}.process{grid-template-columns:repeat(2,1fr)}.hero{min-height:0}.hero-copy{min-height:600px}.proof-row{grid-template-columns:1fr 1fr}.proof:last-child{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}}
+    @media (max-width:720px){.booking-types,.booking-calendar,.booking-actions{grid-template-columns:1fr}.slot-grid{grid-template-columns:repeat(2,1fr)}.ai-logos{grid-template-columns:1fr}.ai-logo{min-height:92px;border-right:0}.knight-copy,.cmd-screen{padding:20px}.knight-scene{min-height:340px}.living-strip{display:block}.live-control{justify-content:space-between;min-height:58px;border-top:1px solid var(--line2)}.frame{width:calc(100% - 12px);margin:6px auto}.nav{grid-template-columns:1fr 76px}.nav .mobile-hide{display:none}.brand span{font-size:14px}.hero-copy{padding:52px 18px;min-height:auto}.hero h1{font-size:43px;line-height:.92}.hero-lead,.section-lead{font-size:16px}.hero-actions{display:grid}.proof-row,.build-grid,.process,.roles,.row,.footer{grid-template-columns:1fr}.proof,.proof:last-child{border-left:0;border-top:1px solid var(--line)}.proof:first-child{border-top:0}.section-body{padding:26px 16px}.section-label{padding:18px 16px}.visual-panel{min-height:520px}.rasi-core{min-height:430px}.float-card{display:none}.core-orb{width:150px;height:150px}.o1{width:250px}.o2{width:310px}.o3{width:210px;height:210px}.build-card,.offer-card,.step{min-height:245px}.flow-row{grid-template-columns:1fr}.flow-row span{border-right:0;border-bottom:1px solid var(--line);min-height:36px}.contact-form{padding:18px}.footer div,.footer a{border-left:0;border-top:1px solid var(--line);padding:14px}.footer div:first-child{border-top:0}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.stage{transform:none!important}}
   </style>
 </head>
 <body>
   <div class="frame">
-    <nav class="system-nav" aria-label="Primary navigation">
-      <a class="nav-cell brand" href="#top"><img src="AR_logo_transparent_dark.png" alt="Arzware logo"><span>ARZWARE<small>creative systems agency</small></span></a>
-      <a class="nav-cell mobile-hide" href="#modules">Modules</a>
-      <a class="nav-cell mobile-hide" href="#console">Console</a>
-      <a class="nav-cell hide-md" href="#process">Process</a>
-      <a class="nav-cell hide-md" href="#contact">Audit</a>
-      <button class="nav-cell theme-btn" id="themeBtn" type="button" aria-label="Toggle theme"><span class="switch"><i></i></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav-cell brand" href="#top"><img src="AR_logo_transparent_dark.png" alt="Arzware logo"><span>ARZWARE<small>AI-native systems agency</small></span></a>
+      <a class="nav-cell mobile-hide" href="#build">Builds</a>
+      <a class="nav-cell mobile-hide" href="#offer">Offer</a>
+      <a class="nav-cell mobile-hide hide-lg" href="#systems">Systems</a>
+      <a class="nav-cell mobile-hide hide-lg" href="#impact">Talent</a>
+      <a class="nav-cell mobile-hide hide-lg" href="#contact">Audit</a>
+      <button class="nav-cell theme-btn" id="themeBtn" type="button" aria-label="Toggle light or dark theme" title="Toggle theme"><span class="switch"><i></i></span></button>
     </nav>
 
     <main id="top" class="hero">
-      <div class="hero-main">
-        <section class="hero-copy" aria-label="Arzware alternate concept hero">
-          <div class="system-tag">workflow systems • supervised delivery</div>
-          <h1>Business chaos, converted into operating systems.</h1>
-          <p><strong>Arzware</strong> designs the digital layer behind small businesses: lead pipelines, booking flows, dashboards, automations, CRM-lite tools, and AI-assisted work systems.</p>
-          <div class="command-stack" aria-label="Quick action commands">
-            <div class="command"><span class="cmd-label">Audit</span><code>arzware diagnose --workflow "messy follow-ups"</code><button class="copy" data-copy="arzware diagnose --workflow messy-follow-ups">Copy</button></div>
-            <div class="command"><span class="cmd-label">Build</span><code>launch smallest-useful-system --handover included</code><button class="copy" data-copy="launch smallest-useful-system --handover included">Copy</button></div>
-          </div>
-        </section>
+      <section class="hero-copy" aria-label="Arzware hero">
+        <div class="eyebrow">premium websites • CRM-lite • automation • AI-assisted operations</div>
+        <h1>Turn digital chaos into a working business system.</h1>
+        <p class="hero-lead"><strong>Arzware</strong> is an AI-native software and digital systems agency for growing businesses. We build premium websites, booking flows, dashboards, CRM-lite trackers, automations, and practical tools that make sales, operations, and follow-up easier to run.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Book a free mini-audit</a>
+          <a class="btn secondary" href="#offer">View website offer</a>
+        </div>
+        <div class="proof-row" aria-label="Arzware positioning">
+          <div class="proof"><small>For</small><b>Clinics, restaurants, local services, schools, consultants, SMEs</b></div>
+          <div class="proof"><small>Fixes</small><b>Weak presence, scattered leads, manual follow-ups, messy workflows</b></div>
+          <div class="proof"><small>Delivers</small><b>Websites connected to the operating layer behind the click</b></div>
+        </div>
+      </section>
 
-        <aside class="side-panel" aria-label="System schematic">
-          <div class="side-top"><span>ARZWARE // OPS CORE</span><span>v0.2</span></div>
-          <div class="schematic">
-            <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-            <span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><span class="node n4"></span>
-            <div class="orb"><img src="AR_logo_transparent_dark.png" alt="Arzware mark"></div>
+      <aside class="visual-panel" aria-label="Arzware operating core visual">
+        <div class="panel-top"><span>ARZWARE // RASINGRAPHY CORE</span><span>LIVE CONCEPT</span></div>
+        <div class="rasi-core" id="core3d">
+          <div class="stage" id="stage3d">
+            <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div>
+            <span class="pulse p1"></span><span class="pulse p2"></span><span class="pulse p3"></span><span class="pulse p4"></span>
+            <div class="float-card fc1">Input<b>DMs / calls / forms</b></div>
+            <div class="float-card fc2">System<b>CRM-lite + booking</b></div>
+            <div class="float-card fc3">Output<b>follow-up rhythm</b></div>
+            <div class="tilted-object tilt-a">audit signal</div>
+            <div class="tilted-object tilt-b">ai stack online</div>
+            <div class="tilted-object tilt-c">ops guard</div>
+            <div class="core-orb"><img src="AR_logo_transparent_dark.png" alt="Arzware mark"></div>
           </div>
-          <div class="side-bottom"><span>Status: mapping workflow</span><span>Risk: reduced</span></div>
-        </aside>
-      </div>
-
-      <div class="ticker" aria-hidden="true"><div><span>leads → CRM-lite</span><span>bookings → reminders</span><span>requests → dashboard</span><span>reports → weekly visibility</span><span>AI → human reviewed</span><span>leads → CRM-lite</span><span>bookings → reminders</span><span>requests → dashboard</span><span>reports → weekly visibility</span><span>AI → human reviewed</span></div></div>
-      <div class="metrics" aria-label="Positioning strip">
-        <div class="metric"><small>Start point</small><b>One messy workflow</b></div>
-        <div class="metric"><small>Method</small><b>Diagnose before build</b></div>
-        <div class="metric"><small>Delivery</small><b>Smallest useful system</b></div>
-        <div class="metric"><small>Output</small><b>Documented handover</b></div>
-      </div>
+        </div>
+        <div class="panel-bottom"><span>Status: production direction</span><span>Heavy 3D avoided</span></div>
+      </aside>
     </main>
 
-    <section id="modules">
+    <div class="ticker" aria-hidden="true"><div><span>website → trust</span><span>forms → lead capture</span><span>WhatsApp → tracked inquiries</span><span>booking → reminders</span><span>dashboards → visibility</span><span>AI → human reviewed</span><span>website → trust</span><span>forms → lead capture</span><span>WhatsApp → tracked inquiries</span><span>booking → reminders</span><span>dashboards → visibility</span><span>AI → human reviewed</span></div></div>
+
+
+    <div class="living-strip" aria-label="Live operating message">
+      <div class="grid-message" aria-hidden="true"><div class="grid-message-track"><span>live systems thinking</span><span>audits running</span><span>lead flow mapped</span><span>AI assisted / human reviewed</span><span>websites become operating layers</span><span>live systems thinking</span><span>audits running</span><span>lead flow mapped</span><span>AI assisted / human reviewed</span><span>websites become operating layers</span></div></div>
+      <div class="live-control"><span class="live-dot"></span><span>systems light</span><span class="live-switch" aria-hidden="true"></span></div>
+    </div>
+
+    <section id="living-system">
       <div class="section-grid">
-        <div class="section-label">§01 / system modules</div>
+        <div class="section-label">§00 / living layer</div>
         <div class="section-body">
-          <h2 class="section-title">Software offers shaped like operational tools.</h2>
-          <p class="section-lead">This version frames Arzware less like an agency and more like a systems workshop: each offer maps a specific business mess into a clean, usable workflow.</p>
-          <div class="module-grid">
-            <article class="module" data-id="M-01"><h3>Workflow Diagnosis</h3><p>Map the process, handoffs, tools, bottlenecks, and smallest useful system before choosing what to build.</p></article>
-            <article class="module" data-id="M-02"><h3>Lead Operating Layer</h3><p>Replace scattered DMs, calls, WhatsApp follow-ups, and spreadsheet notes with one visible lead pipeline.</p></article>
-            <article class="module" data-id="M-03"><h3>Booking Control Flow</h3><p>Create booking pages, confirmation states, client records, reminders, and a clear admin surface.</p></article>
-            <article class="module" data-id="M-04"><h3>Operations Dashboard</h3><p>Track requests, tasks, orders, owners, weekly reports, and status changes without manual reporting chaos.</p></article>
-            <article class="module" data-id="M-05"><h3>Automation Sprint</h3><p>Automate repeated forms, reminders, follow-ups, reporting, notifications, and coordination tasks.</p></article>
-            <article class="module" data-id="M-06"><h3>AI Workflow Assistant</h3><p>Use AI for research, internal knowledge, content, support, and operations with human review built in.</p></article>
+          <div class="knight-grid">
+            <div class="knight-copy">
+              <div>
+                <div class="eyebrow">mythic guard • modern systems</div>
+                <h3>A knight for the business workflow.</h3>
+                <p>The visual world now has a living guardian motif: Arzware as the builder that protects the business from lost leads, messy handoffs, weak websites, and manual chaos.</p>
+              </div>
+              <div class="note"><b>Design intent:</b> a Hermes-like knight/sword feeling, translated into Arzware’s own operating-system identity — not a copy, not stock art.</div>
+            </div>
+            <div class="knight-scene" aria-label="Illustration of a knight holding a sword guarding the operating system">
+              <div class="tilted-object tilt-a">lead shield</div>
+              <div class="tilted-object tilt-b">sword protocol</div>
+              <div class="tilted-object tilt-c">system oath</div>
+              <svg class="knight-svg" viewBox="0 0 520 520" role="img" aria-label="Abstract knight holding a sword">
+                <defs>
+                  <linearGradient id="blade" x1="0" x2="1"><stop stop-color="#f4ead7"/><stop offset="1" stop-color="#68e0be"/></linearGradient>
+                  <linearGradient id="armor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efe1c4"/><stop offset=".55" stop-color="#8f8678"/><stop offset="1" stop-color="#26352d"/></linearGradient>
+                  <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <path d="M272 58 L305 154 L285 156 L250 66 Z" fill="url(#blade)" filter="url(#glow)" transform="rotate(26 278 120)"/>
+                <path d="M273 149 L318 190" stroke="#caff6a" stroke-width="9" stroke-linecap="round"/>
+                <path d="M236 110 C260 84 305 96 315 134 C323 164 304 190 274 192 C237 194 214 145 236 110Z" fill="url(#armor)" stroke="#efe1c4" stroke-width="3"/>
+                <path d="M228 132 L318 126" stroke="#07100d" stroke-width="11"/><path d="M244 122 L299 117" stroke="#caff6a" stroke-width="4"/>
+                <path d="M205 206 C230 175 294 174 324 207 L356 354 L170 354 Z" fill="url(#armor)" stroke="#efe1c4" stroke-width="3"/>
+                <path d="M207 236 L164 285 L187 308 L231 260" fill="#26352d" stroke="#efe1c4" stroke-width="3"/>
+                <path d="M321 232 L382 282 L360 310 L304 262" fill="#26352d" stroke="#efe1c4" stroke-width="3"/>
+                <path d="M198 354 L185 438 L231 438 L250 354" fill="#18231e" stroke="#efe1c4" stroke-width="3"/>
+                <path d="M292 354 L310 438 L356 438 L335 354" fill="#18231e" stroke="#efe1c4" stroke-width="3"/>
+                <path d="M160 456 H378" stroke="#caff6a" stroke-width="3" stroke-dasharray="10 12" opacity=".8"/>
+                <circle cx="262" cy="266" r="56" fill="none" stroke="#caff6a" stroke-width="3" opacity=".7"/>
+                <path d="M228 266 H296 M262 232 V300" stroke="#68e0be" stroke-width="3" opacity=".85"/>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="console">
+    <section id="ai-stack">
       <div class="section-grid">
-        <div class="section-label">§02 / operating console</div>
+        <div class="section-label">§00B / AI stack</div>
         <div class="section-body">
-          <h2 class="section-title">From scattered inputs to one business control surface.</h2>
-          <p class="section-lead">The visual language borrows the seriousness of technical documentation and command interfaces, but turns it toward small-business operations instead of developer tooling.</p>
-          <div class="split">
-            <div class="terminal" aria-label="Workflow console mockup">
-              <div class="term-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>workflow-diagnosis.log</span></div>
-              <div class="term-lines">
-                <div><span class="prompt">$</span> scan sources --business="service provider"</div>
+          <h2 class="section-title">AI tools in the workshop, humans in control.</h2>
+          <p class="section-lead">Arzware can use modern AI tools for research, coding assistance, content drafts, summaries, proposals, and workflow thinking — but delivery stays reviewed, scoped, and owned by humans.</p>
+          <div class="ai-grid">
+            <div class="ai-logos" aria-label="AI tools used as text wordmarks">
+              <div class="ai-logo"><div><b>OpenAI</b><small>reasoning / drafts</small></div></div>
+              <div class="ai-logo"><div><b>Claude</b><small>design / planning</small></div></div>
+              <div class="ai-logo"><div><b>Gemini</b><small>research / docs</small></div></div>
+              <div class="ai-logo"><div><b>DeepSeek</b><small>code support</small></div></div>
+              <div class="ai-logo"><div><b>Hermes</b><small>agent ops</small></div></div>
+              <div class="ai-logo"><div><b>Qwen</b><small>automation assist</small></div></div>
+            </div>
+            <div class="command-live">
+              <div class="console-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>arzware-agent.run</span></div>
+              <div class="cmd-screen">
+                <div><span class="prompt">$</span> <span id="typeCommand" class="typed-line"></span><span class="typed-cursor"></span></div>
+                <div class="cmd-stream">
+                  <div class="warn">→ scanning weak website signals</div>
+                  <div>→ mapping customer entry points</div>
+                  <div>→ drafting smallest useful system</div>
+                  <div class="ok">✓ human review required before launch</div>
+                  <div class="ok">✓ mini-audit package ready</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="build">
+      <div class="section-grid">
+        <div class="section-label">§01 / what we build</div>
+        <div class="section-body">
+          <h2 class="section-title">Not just pages. The business layer behind them.</h2>
+          <p class="section-lead">Arzware starts with the business problem: unclear online trust, scattered customer messages, manual reporting, broken booking, or no follow-up process. Then we build the smallest useful digital system around it.</p>
+          <div class="build-grid">
+            <article class="build-card" data-id="B-01"><small>Digital presence</small><h3>Premium websites</h3><p>Fast, mobile-first websites with serious positioning, service pages, clear CTAs, and trust-building content.</p></article>
+            <article class="build-card" data-id="B-02"><small>Lead control</small><h3>CRM-lite flows</h3><p>Simple lead trackers, contact stages, follow-up ownership, reminders, and lightweight visibility for owners.</p></article>
+            <article class="build-card" data-id="B-03"><small>Operations</small><h3>Dashboards & tools</h3><p>Internal screens for requests, tasks, orders, project status, client records, reports, and admin workflows.</p></article>
+            <article class="build-card" data-id="B-04"><small>AI-assisted</small><h3>Automations</h3><p>Forms, notifications, summaries, proposal drafts, knowledge-base helpers, and repetitive workflow automation with human review.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="offer">
+      <div class="section-grid">
+        <div class="section-label">§02 / website growth offer</div>
+        <div class="section-body">
+          <h2 class="section-title">The first offer clients understand immediately.</h2>
+          <p class="section-lead">A premium website is the clean entry point. The Arzware difference is connecting that site to the workflow after the click: WhatsApp, forms, booking, CRM-lite tracking, analytics, and follow-up.</p>
+          <div class="offer-strip">
+            <article class="offer-card"><small>Starter Presence</small><h3>Look real online.</h3><p>One clean, mobile-first page for businesses with weak or missing online presence.</p><ul><li>Trust-building homepage</li><li>WhatsApp / contact CTA</li><li>Google Maps + basic SEO</li><li><a href="#booking" class="inline-call">Book intro call →</a></li></ul></article>
+            <article class="offer-card featured"><small>Growth Website</small><h3>Make the business easier to buy from.</h3><p>A 4–6 page premium site built to explain the business clearly and convert interest into action.</p><ul><li>Homepage, services, about, contact</li><li>Conversion copy and mobile polish</li><li>Analytics + launch support</li><li><a href="#booking" class="inline-call">Book strategy call →</a></li></ul></article>
+            <article class="offer-card"><small>Premium Conversion</small><h3>Track leads after the click.</h3><p>Website plus booking/request flow, simple CRM-lite tracking, and post-launch improvement support.</p><ul><li>Lead capture + follow-up path</li><li>Booking/request workflow</li><li>30-day support window</li><li><a href="#booking" class="inline-call">Book systems call →</a></li></ul></article>
+          </div>
+          <div class="note"><b>Best first targets:</b> clinics, dentists, restaurants, salons, schools, consultants, and service businesses with poor mobile trust, no proper website, or messy WhatsApp follow-up. <a href="#booking" class="inline-call">Book a call with Arzware →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="systems">
+      <div class="section-grid">
+        <div class="section-label">§03 / operating systems</div>
+        <div class="section-body">
+          <h2 class="section-title">From scattered inputs to one control surface.</h2>
+          <p class="section-lead">The website creates trust. The operating layer makes the business easier to run. Arzware connects customer entry points to a simple system the owner and team can actually use.</p>
+          <div class="system-map">
+            <div class="console" aria-label="Workflow diagnosis console">
+              <div class="console-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>workflow-diagnosis.log</span></div>
+              <div class="lines">
+                <div><span class="prompt">$</span> scan sources --business="service company"</div>
                 <div class="warn">found: WhatsApp leads, Instagram DMs, phone calls, sheet rows</div>
                 <div><span class="prompt">$</span> detect bottlenecks</div>
                 <div>→ no lead owner</div>
                 <div>→ no follow-up reminders</div>
-                <div>→ weekly reporting built manually</div>
-                <div><span class="prompt">$</span> recommend system</div>
-                <div class="ok">create: CRM-lite pipeline + booking flow + reminder automation</div>
-                <div class="ok">handover: docs, dashboard, owner workflow</div>
+                <div>→ reports built manually</div>
+                <div><span class="prompt">$</span> recommend smallest useful system</div>
+                <div class="ok">create: CRM-lite pipeline + booking flow + dashboard</div>
+                <div class="ok">handover: owner workflow + documentation</div>
               </div>
             </div>
-            <div class="diagram">
-              <div class="route">
-                <div class="route-row"><span>Input</span><b>WhatsApp / DMs / forms</b></div>
-                <div class="route-row"><span>System</span><b>CRM-lite + dashboard</b></div>
-                <div class="route-row"><span>Automate</span><b>follow-ups + reminders</b></div>
-                <div class="route-row"><span>Review</span><b>weekly visibility report</b></div>
-              </div>
-              <p class="diagram-note">The result is not “more software.” It is a cleaner operating rhythm that the owner and team can actually run.</p>
+            <div class="flow">
+              <div class="flow-row"><span>Input</span><b>Website / WhatsApp / DMs / calls</b></div>
+              <div class="flow-row"><span>Capture</span><b>Forms + lead records</b></div>
+              <div class="flow-row"><span>System</span><b>CRM-lite + booking flow</b></div>
+              <div class="flow-row"><span>Operate</span><b>follow-ups + reminders + reports</b></div>
+              <p>The result is not “more software.” It is a cleaner operating rhythm that reduces missed leads and manual chaos.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="use-cases">
+      <div class="section-grid">
+        <div class="section-label">§04 / client use cases</div>
+        <div class="section-body">
+          <h2 class="section-title">Practical systems for real business pressure.</h2>
+          <div class="use-grid">
+            <article class="use-card"><small>Clinics / dentists</small><h3>Appointments & trust</h3><p>Modern service pages, treatment explanations, booking request forms, WhatsApp routing, and lead follow-up tracking.</p></article>
+            <article class="use-card"><small>Restaurants / hospitality</small><h3>Menus & inquiries</h3><p>Mobile menu pages, reservation or event inquiry flows, offer updates, and simple customer request tracking.</p></article>
+            <article class="use-card"><small>Service businesses</small><h3>Requests & pipeline</h3><p>Lead capture, quote request forms, status tracking, reminders, owner dashboards, and weekly visibility.</p></article>
           </div>
         </div>
       </div>
@@ -186,14 +320,71 @@
 
     <section id="process">
       <div class="section-grid">
-        <div class="section-label">§03 / delivery protocol</div>
+        <div class="section-label">§05 / delivery protocol</div>
         <div class="section-body">
           <h2 class="section-title">A controlled build process, not random development.</h2>
           <div class="process">
-            <article class="step" data-step="01"><small>Diagnose</small><h3>Map the workflow.</h3><p>Understand the business process before proposing tools or screens.</p></article>
-            <article class="step" data-step="02"><small>Specify</small><h3>Define the smallest system.</h3><p>Choose the first useful version and remove unnecessary scope.</p></article>
-            <article class="step" data-step="03"><small>Build</small><h3>Launch the operating layer.</h3><p>Create the form, dashboard, CRM-lite tracker, automation, or site connection.</p></article>
-            <article class="step" data-step="04"><small>Handover</small><h3>Document and improve.</h3><p>Train the team, review usage, and grow the system after it works.</p></article>
+            <article class="step" data-step="01"><small>Diagnose</small><h3>Map the workflow.</h3><p>Understand the business process, tools, customers, handoffs, and bottlenecks before proposing screens.</p></article>
+            <article class="step" data-step="02"><small>Specify</small><h3>Scope the first useful version.</h3><p>Choose the smallest package that solves the real problem without unnecessary complexity.</p></article>
+            <article class="step" data-step="03"><small>Build</small><h3>Launch the site/system.</h3><p>Create the pages, form, dashboard, CRM-lite tracker, automation, or connected operating flow.</p></article>
+            <article class="step" data-step="04"><small>Handover</small><h3>Train and improve.</h3><p>Document the workflow, hand over ownership, review usage, and improve the system after launch.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact">
+      <div class="section-grid">
+        <div class="section-label">§06 / talent engine</div>
+        <div class="section-body">
+          <div class="impact">
+            <div class="impact-copy">
+              <div class="eyebrow">supervised talent model</div>
+              <h3>Building client systems while training the next generation.</h3>
+              <p>Arzware combines senior direction, AI-assisted workflows, and supervised junior talent. Interns and early-career builders learn through real tasks, but client-sensitive work stays controlled, reviewed, and scoped.</p>
+            </div>
+            <div class="roles">
+              <div class="role"><small>Design</small><b>Visual + web execution</b><p>Landing pages, interfaces, brand surfaces, responsive polish.</p></div>
+              <div class="role"><small>Development</small><b>Software + automation</b><p>Websites, dashboards, scripts, CRM-lite tools, workflow glue.</p></div>
+              <div class="role"><small>Growth</small><b>Research + outreach</b><p>Lead research, content, proposal support, client communication.</p></div>
+              <div class="role"><small>Operations</small><b>Project coordination</b><p>SOPs, QA checklists, reporting, delivery documentation.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="booking">
+      <div class="section-grid">
+        <div class="section-label">§07 / booking system</div>
+        <div class="section-body">
+          <div class="booking-system">
+            <div class="booking-copy">
+              <div class="eyebrow">book a call • no pricing wall</div>
+              <h3>Choose a time to talk with Arzware.</h3>
+              <p>Instead of guessing prices from a page, the booking system helps a client choose the right conversation: quick mini-audit, website strategy, or systems diagnosis.</p>
+              <div class="note"><b>Prototype booking flow:</b> client picks a call type, date, and time. The site opens a pre-filled email request and downloads a calendar invite file. Later this can connect to Cal.com, Calendly, or Google Calendar appointment scheduling.</div>
+            </div>
+            <div class="booking-panel" aria-label="Arzware booking system">
+              <div class="booking-types" role="list" aria-label="Meeting type">
+                <button class="booking-type active" type="button" data-type="Mini-Audit Call" data-duration="20"><b>Mini-Audit</b><span>20 min / first look</span></button>
+                <button class="booking-type" type="button" data-type="Website Strategy Call" data-duration="30"><b>Website Strategy</b><span>30 min / offer fit</span></button>
+                <button class="booking-type" type="button" data-type="Systems Diagnosis Call" data-duration="45"><b>Systems Diagnosis</b><span>45 min / workflow map</span></button>
+              </div>
+              <div class="booking-calendar">
+                <div class="field"><label for="bookingDate">Preferred date</label><input id="bookingDate" type="date"></div>
+                <div class="field"><label for="bookingTimezone">Timezone</label><select id="bookingTimezone"><option>Asia/Beirut</option><option>UTC</option><option>Europe/London</option><option>Europe/Berlin</option><option>Asia/Dubai</option><option>America/New_York</option></select></div>
+              </div>
+              <div class="field"><label>Available time</label><div class="slot-grid" id="slotGrid"></div></div>
+              <div class="booking-summary" id="bookingSummary">Selected: Mini-Audit Call • choose date and time</div>
+              <div class="booking-actions">
+                <button class="btn" id="requestBooking" type="button">Request Meeting</button>
+                <button class="btn secondary" id="downloadInvite" type="button">Download .ICS</button>
+              </div>
+              <div class="booking-confirm" id="bookingConfirm">Booking request prepared. Your email app should open with the meeting details.</div>
+              <div class="booking-note">No external account required for this prototype. It is production-ready as a static booking request flow, and can later be connected to Cal.com / Calendly / Google Calendar.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -201,21 +392,21 @@
 
     <section id="contact">
       <div class="section-grid">
-        <div class="section-label">§04 / request audit</div>
+        <div class="section-label">§08 / request audit</div>
         <div class="section-body">
           <div class="contact">
             <div class="contact-copy">
-              <div class="system-tag">low-risk first step</div>
-              <h2>Send one messy workflow.</h2>
-              <p>Tell Arzware what is slowing your business down. The first move is not a huge build — it is a diagnosis of the workflow and the smallest useful system to fix it.</p>
+              <div class="eyebrow">low-risk first step</div>
+              <h2>Send the workflow or website you want fixed.</h2>
+              <p>Tell Arzware what business you run, where customers contact you, and what feels messy. The first move is a short mini-audit, then the smallest useful website/system package.</p>
               <a class="btn secondary" href="mailto:hello@arzware.com">Email hello@arzware.com</a>
             </div>
             <form class="contact-form" id="auditForm">
-              <div class="row"><div class="field"><label for="name">Name</label><input id="name" name="name" required></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div></div>
-              <div class="row"><div class="field"><label for="business">Business type</label><input id="business" name="business"></div><div class="field"><label for="timeline">Timeline</label><select id="timeline" name="timeline"><option>Exploring</option><option>This month</option><option>2–4 weeks</option><option>Urgent</option></select></div></div>
-              <div class="field"><label for="workflow">Messy workflow</label><textarea id="workflow" name="workflow" placeholder="Leads, bookings, reports, operations, support..." required></textarea></div>
-              <div class="field"><label for="tools">Current tools</label><input id="tools" name="tools" placeholder="WhatsApp, Sheets, Instagram, paper notes..."></div>
-              <button class="btn" type="submit">Book a Systems Audit</button>
+              <div class="row"><div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div></div>
+              <div class="row"><div class="field"><label for="business">Business type</label><input id="business" name="business" placeholder="Clinic, restaurant, service..."></div><div class="field"><label for="timeline">Timeline</label><select id="timeline" name="timeline"><option>Exploring</option><option>This month</option><option>2–4 weeks</option><option>Urgent</option></select></div></div>
+              <div class="field"><label for="workflow">What feels messy?</label><textarea id="workflow" name="workflow" placeholder="Weak website, WhatsApp leads, booking, reports, operations, support..." required></textarea></div>
+              <div class="field"><label for="tools">Current tools</label><input id="tools" name="tools" placeholder="WhatsApp, Sheets, Instagram, Google Forms, paper notes..."></div>
+              <button class="btn" type="submit">Book a Free Mini-Audit</button>
             </form>
           </div>
         </div>
@@ -223,7 +414,7 @@
     </section>
 
     <footer class="footer">
-      <div>ARZWARE / alternate website concept</div>
+      <div>ARZWARE / production website concept — local preview only</div>
       <a href="index.html">Current version</a>
       <a href="https://github.com/admatieh/arzware" target="_blank" rel="noreferrer">GitHub ↗</a>
     </footer>
@@ -233,20 +424,133 @@
   <script>
     const root = document.documentElement;
     const savedTheme = localStorage.getItem('arzware-concept-theme');
-    if(savedTheme) root.dataset.theme = savedTheme;
-    document.getElementById('themeBtn').addEventListener('click', () => {
+    if(savedTheme && savedTheme !== 'dark') root.dataset.theme = savedTheme;
+
+    const themeBtn = document.getElementById('themeBtn');
+    themeBtn.addEventListener('click', () => {
       root.dataset.theme = root.dataset.theme === 'light' ? '' : 'light';
       localStorage.setItem('arzware-concept-theme', root.dataset.theme || 'dark');
     });
-    const toast = document.getElementById('toast');
-    document.querySelectorAll('.copy').forEach(button => {
-      button.addEventListener('click', async () => {
-        try { await navigator.clipboard.writeText(button.dataset.copy); } catch(e) {}
-        button.textContent = 'Done';
-        toast.classList.add('show');
-        setTimeout(()=>{button.textContent='Copy';toast.classList.remove('show')}, 1200);
+
+    const core = document.getElementById('core3d');
+    const stage = document.getElementById('stage3d');
+    const canMove = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(core && stage && canMove){
+      core.addEventListener('pointermove', (event) => {
+        const box = core.getBoundingClientRect();
+        const x = ((event.clientX - box.left) / box.width - .5) * 2;
+        const y = ((event.clientY - box.top) / box.height - .5) * 2;
+        stage.style.transform = `rotateX(${(-y * 7).toFixed(2)}deg) rotateY(${(x * 9).toFixed(2)}deg)`;
       });
+      core.addEventListener('pointerleave', () => { stage.style.transform = ''; });
+    }
+
+
+    const commands = [
+      'arzware audit --website --workflow --follow-up',
+      'map leads --from whatsapp,forms,calls --to crm-lite',
+      'generate proposal --package growth-website --human-review',
+      'deploy operating-layer --booking --reminders --dashboard'
+    ];
+    const typeTarget = document.getElementById('typeCommand');
+    let commandIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+    function typeLoop(){
+      if(!typeTarget) return;
+      const current = commands[commandIndex];
+      typeTarget.textContent = current.slice(0, charIndex);
+      if(!deleting && charIndex < current.length){
+        charIndex++;
+        setTimeout(typeLoop, 42);
+      } else if(!deleting){
+        deleting = true;
+        setTimeout(typeLoop, 1200);
+      } else if(charIndex > 0){
+        charIndex--;
+        setTimeout(typeLoop, 20);
+      } else {
+        deleting = false;
+        commandIndex = (commandIndex + 1) % commands.length;
+        setTimeout(typeLoop, 300);
+      }
+    }
+    typeLoop();
+
+
+    const bookingState = { type: 'Mini-Audit Call', duration: 20, slot: '' };
+    const dateInput = document.getElementById('bookingDate');
+    const tzInput = document.getElementById('bookingTimezone');
+    const slotGrid = document.getElementById('slotGrid');
+    const bookingSummary = document.getElementById('bookingSummary');
+    const bookingConfirm = document.getElementById('bookingConfirm');
+    const slots = ['10:00','11:00','12:00','14:00','15:00','16:00'];
+    function pad(n){ return String(n).padStart(2,'0'); }
+    function setDefaultBookingDate(){
+      if(!dateInput) return;
+      const d = new Date();
+      d.setDate(d.getDate() + 1);
+      if(d.getDay() === 0) d.setDate(d.getDate() + 1);
+      if(d.getDay() === 6) d.setDate(d.getDate() + 2);
+      dateInput.value = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+      dateInput.min = dateInput.value;
+    }
+    function renderSlots(){
+      if(!slotGrid) return;
+      slotGrid.innerHTML = slots.map(time => `<button class="slot${bookingState.slot === time ? ' active' : ''}" type="button" data-slot="${time}">${time}</button>`).join('');
+      slotGrid.querySelectorAll('.slot').forEach(btn => btn.addEventListener('click', () => { bookingState.slot = btn.dataset.slot; renderSlots(); updateBookingSummary(); }));
+    }
+    function updateBookingSummary(){
+      if(!bookingSummary) return;
+      const date = dateInput?.value || 'choose date';
+      const tz = tzInput?.value || 'Asia/Beirut';
+      const time = bookingState.slot || 'choose time';
+      bookingSummary.textContent = `Selected: ${bookingState.type} • ${bookingState.duration} min • ${date} • ${time} • ${tz}`;
+    }
+    document.querySelectorAll('.booking-type').forEach(btn => btn.addEventListener('click', () => {
+      document.querySelectorAll('.booking-type').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      bookingState.type = btn.dataset.type;
+      bookingState.duration = Number(btn.dataset.duration || 20);
+      updateBookingSummary();
+    }));
+    dateInput?.addEventListener('change', updateBookingSummary);
+    tzInput?.addEventListener('change', updateBookingSummary);
+    function getBookingDetails(){
+      const date = dateInput?.value;
+      const time = bookingState.slot;
+      const tz = tzInput?.value || 'Asia/Beirut';
+      if(!date || !time) return null;
+      return {date,time,tz,type:bookingState.type,duration:bookingState.duration};
+    }
+    function makeIcs(details){
+      const start = new Date(`${details.date}T${details.time}:00`);
+      const end = new Date(start.getTime() + details.duration * 60000);
+      const stamp = new Date().toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
+      const fmt = d => d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
+      return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Arzware//Booking Request//EN','BEGIN:VEVENT',`UID:${Date.now()}@arzware.com`,`DTSTAMP:${stamp}`,`DTSTART:${fmt(start)}`,`DTEND:${fmt(end)}`,`SUMMARY:Arzware ${details.type}`,`DESCRIPTION:Requested from Arzware website. Timezone selected: ${details.tz}. Please confirm by email.`,`LOCATION:Online meeting / Google Meet / Zoom to be confirmed`,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    }
+    function downloadIcs(){
+      const details = getBookingDetails();
+      if(!details){ alert('Choose a date and time first.'); return; }
+      const blob = new Blob([makeIcs(details)], {type:'text/calendar'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `arzware-${details.type.toLowerCase().replaceAll(' ','-')}.ics`;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+    }
+    document.getElementById('downloadInvite')?.addEventListener('click', downloadIcs);
+    document.getElementById('requestBooking')?.addEventListener('click', () => {
+      const details = getBookingDetails();
+      if(!details){ alert('Choose a date and time first.'); return; }
+      const body = [`Meeting type: ${details.type}`,`Duration: ${details.duration} minutes`,`Preferred date: ${details.date}`,`Preferred time: ${details.time}`,`Timezone: ${details.tz}`,'','Business / website:', '','What should we look at before the call:', ''].join('\n');
+      bookingConfirm?.classList.add('show');
+      downloadIcs();
+      location.href = 'mailto:hello@arzware.com?subject=' + encodeURIComponent(`Booking request: ${details.type}`) + '&body=' + encodeURIComponent(body);
     });
+    setDefaultBookingDate(); renderSlots(); updateBookingSummary();
+
     document.getElementById('auditForm').addEventListener('submit', (event) => {
       event.preventDefault();
       const data = new FormData(event.currentTarget);
@@ -256,11 +560,11 @@
         'Business type: '+(data.get('business')||''),
         'Timeline: '+(data.get('timeline')||''),
         '',
-        'Messy workflow:', data.get('workflow')||'',
+        'What feels messy:', data.get('workflow')||'',
         '',
         'Current tools:', data.get('tools')||''
       ].join('\n');
-      location.href = 'mailto:hello@arzware.com?subject=' + encodeURIComponent('Systems Audit Request') + '&body=' + encodeURIComponent(body);
+      location.href = 'mailto:hello@arzware.com?subject=' + encodeURIComponent('Arzware Mini-Audit Request') + '&body=' + encodeURIComponent(body);
     });
   </script>
 </body>
