@@ -47,7 +47,7 @@
     button,input,textarea,select{font:inherit}
     .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
     .nav{position:sticky;top:14px;z-index:30;margin:14px auto 0;width:min(1220px,calc(100% - 28px));display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px;border:1px solid var(--line);border-radius:999px;background:rgba(4,7,11,.76);backdrop-filter:blur(20px);box-shadow:0 12px 44px rgba(0,0,0,.28)}
-    .brand{display:flex;align-items:center;gap:12px;padding-left:8px;min-width:max-content}.brand-mark{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(99,188,255,.24),rgba(217,155,74,.18));border:1px solid var(--line-strong);font-family:Playfair Display,serif;font-weight:800;color:var(--ink)}.brand-name{font-family:Playfair Display,serif;font-weight:800;font-size:24px;letter-spacing:.01em}
+    .brand{display:flex;align-items:center;gap:12px;padding-left:8px;min-width:max-content}.brand-logo{width:36px;height:36px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 0 18px rgba(116,239,255,.14))}.brand-mark{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(99,188,255,.24),rgba(217,155,74,.18));border:1px solid var(--line-strong);font-family:Playfair Display,serif;font-weight:800;color:var(--ink)}.brand-name{font-family:Playfair Display,serif;font-weight:800;font-size:24px;letter-spacing:.01em}
     .nav-links{display:flex;gap:18px;color:var(--muted);font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.065em}.nav-links a:hover{color:var(--ink)}
     .nav-cta{border:1px solid rgba(217,155,74,.48);background:rgba(217,155,74,.12);padding:12px 17px;border-radius:999px;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;color:#ffe0ab;min-width:max-content}.nav-cta:hover{background:rgba(217,155,74,.18)}
     .hero{min-height:86vh;display:grid;align-items:center;padding:62px 0 42px}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}.eyebrow{font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--amber);display:flex;gap:10px;align-items:center;margin-bottom:22px}.eyebrow:before{content:"";width:34px;height:1px;background:var(--amber)}
@@ -71,7 +71,7 @@
 </head>
 <body>
   <nav class="nav">
-    <a class="brand" href="#top" aria-label="Arzware home"><span class="brand-mark">A</span><span class="brand-name">Arzware</span></a>
+    <a class="brand" href="#top" aria-label="Arzware home"><img class="brand-logo" src="AR_logo_transparent_dark.png" alt="Arzware logo"><span class="brand-name">Arzware</span></a>
     <div class="nav-links"><a href="#services">Services</a><a href="#examples">Example Systems</a><a href="#process">Process</a><a href="#talent">Talent Model</a><a href="#contact">Contact</a></div>
     <a class="nav-cta" href="#contact">Book a Systems Audit</a>
   </nav>
@@ -215,7 +215,7 @@
 
   <footer class="footer container">
     <div class="footer-grid">
-      <div><a class="brand" href="#top" aria-label="Arzware home"><span class="brand-mark">A</span><span class="brand-name">Arzware</span></a><p>AI-native software studio turning messy operations into practical digital systems.</p><p>© <span id="year"></span> Arzware. All rights reserved.</p></div>
+      <div><a class="brand" href="#top" aria-label="Arzware home"><img class="brand-logo" src="AR_logo_transparent_dark.png" alt="Arzware logo"><span class="brand-name">Arzware</span></a><p>AI-native software studio turning messy operations into practical digital systems.</p><p>© <span id="year"></span> Arzware. All rights reserved.</p></div>
       <div class="footer-links"><a href="#services">Services</a><a href="#examples">Example Systems</a><a href="#process">Process</a><a href="#talent">Talent Model</a><a href="mailto:hello@arzware.com">Email</a><a href="https://github.com/admatieh/arzware" target="_blank" rel="noreferrer">GitHub</a></div>
     </div>
   </footer>
