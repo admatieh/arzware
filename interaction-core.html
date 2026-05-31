@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arzware — Interaction Core Concept</title>
+  <meta name="description" content="A cinematic Arzware landing concept built around an interaction core: premium websites, booking flows, automations, and AI-assisted business systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      color-scheme:dark;
+      --bg:#020306;
+      --ink:#f6f3ec;
+      --muted:#a8adba;
+      --dim:#6f7585;
+      --line:rgba(246,243,236,.14);
+      --line-strong:rgba(246,243,236,.28);
+      --cyan:#35e9ff;
+      --blue:#4b6dff;
+      --red:#ff4f70;
+      --violet:#a365ff;
+      --cream:#f6f3ec;
+      --panel:rgba(255,255,255,.045);
+      --shadow:0 38px 120px rgba(0,0,0,.62);
+    }
+    *{box-sizing:border-box}
+    html{background:var(--bg);scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      overflow-x:hidden;
+      font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 50% 42%, rgba(73,83,255,.17), transparent 25rem),
+        radial-gradient(circle at 16% 70%, rgba(53,233,255,.13), transparent 23rem),
+        radial-gradient(circle at 86% 24%, rgba(255,79,112,.16), transparent 26rem),
+        linear-gradient(180deg,#050006 0%,#020306 44%,#05070b 100%);
+    }
+    body:before{content:"";position:fixed;inset:0;z-index:-4;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(circle at 50% 42%, black, transparent 72%)}
+    body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.12;background-image:url('data:image/svg+xml,%3Csvg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.78" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="220" height="220" filter="url(%23n)" opacity="0.55"/%3E%3C/svg%3E');mix-blend-mode:screen}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;color:inherit}
+    .shell{width:min(1440px,calc(100% - 22px));min-height:calc(100vh - 22px);margin:11px auto;border:1px solid var(--line-strong);background:rgba(2,3,6,.66);box-shadow:var(--shadow);position:relative;overflow:hidden;backdrop-filter:blur(16px)}
+    .shell:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.08),transparent 18%,transparent 82%,rgba(255,255,255,.08)),linear-gradient(180deg,rgba(255,255,255,.08),transparent 16%,transparent 84%,rgba(255,255,255,.06));opacity:.48;z-index:3}
+    .nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 22px;border-bottom:1px solid var(--line);background:rgba(2,3,6,.52);backdrop-filter:blur(18px)}
+    .brand{display:flex;align-items:center;gap:12px;text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--muted)}
+    .brand img{width:40px;height:36px;object-fit:contain;filter:invert(1) drop-shadow(0 0 22px rgba(53,233,255,.35))}
+    .brand b{font-family:"Archivo Expanded",Inter,sans-serif;color:var(--ink);letter-spacing:.14em;font-size:15px}.nav-actions{display:flex;align-items:center;gap:10px}.nav a:not(.brand){font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:12px 10px}.nav a:hover{color:var(--ink)}
+    .hero{position:relative;min-height:calc(100vh - 84px);display:grid;place-items:center;padding:78px 22px 64px;overflow:hidden}.stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}.star{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(255,255,255,.8);box-shadow:0 0 12px rgba(255,255,255,.75);animation:drift linear infinite}.star:nth-child(3n){background:var(--cyan)}.star:nth-child(4n){background:var(--red)}
+    .core-wrap{position:absolute;inset:0;display:grid;place-items:center;perspective:1100px;pointer-events:none}.energy-ring{position:relative;width:min(71vw,860px);aspect-ratio:1;border-radius:50%;filter:drop-shadow(0 0 34px rgba(53,233,255,.35)) drop-shadow(0 0 58px rgba(255,79,112,.22));animation:slowTilt 11s ease-in-out infinite;transform-style:preserve-3d}.ring-layer{position:absolute;inset:4%;border-radius:50%;border:2px solid transparent;background:conic-gradient(from 0deg,var(--cyan),#4a6cff 18%,var(--violet) 36%,var(--red) 53%,#ffb1b1 63%,var(--red) 72%,var(--violet) 83%,var(--cyan));mask:radial-gradient(farthest-side,transparent calc(100% - 25px),#000 calc(100% - 23px));opacity:.96;animation:spin 13s linear infinite}.ring-layer:nth-child(2){inset:1.5%;filter:blur(6px);opacity:.7;animation-duration:19s;animation-direction:reverse}.ring-layer:nth-child(3){inset:7%;filter:blur(1px);opacity:.55;animation-duration:8s}.wave{position:absolute;inset:3%;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.75) 0deg,transparent 1.8deg,transparent 4.4deg);mask:radial-gradient(farthest-side,transparent calc(100% - 37px),#000 calc(100% - 33px),#000 calc(100% - 27px),transparent calc(100% - 22px));opacity:.6;animation:spin 5.6s linear infinite reverse}.aura{position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.05),transparent 53%),radial-gradient(circle at 50% 96%,rgba(53,233,255,.34),transparent 30%),radial-gradient(circle at 50% 5%,rgba(255,79,112,.22),transparent 26%);filter:blur(8px)}
+    .hero-content{position:relative;z-index:5;text-align:center;width:min(980px,100%);padding:34px 14px}.kicker{font-size:10px;letter-spacing:.31em;text-transform:uppercase;color:rgba(246,243,236,.7);margin-bottom:24px}.hero h1{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(44px,7.6vw,106px);line-height:.94;letter-spacing:-.072em;margin:0;text-wrap:balance;text-shadow:0 0 24px rgba(0,0,0,.45)}.hero p{width:min(760px,100%);margin:22px auto 0;color:rgba(246,243,236,.76);font-size:clamp(14px,1.35vw,18px);line-height:1.8;text-wrap:pretty}.cta-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:0 18px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);backdrop-filter:blur(12px);transition:.18s}.btn.primary{background:linear-gradient(90deg,rgba(53,233,255,.22),rgba(255,79,112,.20));border-color:rgba(255,255,255,.38)}.btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.58)}
+    .hud{position:absolute;z-index:4;border:1px solid var(--line);background:rgba(2,3,6,.46);backdrop-filter:blur(14px);padding:14px 16px;width:clamp(170px,16vw,238px);color:var(--muted);box-shadow:0 22px 80px rgba(0,0,0,.25)}.hud b{display:block;color:var(--ink);font-family:"Archivo Expanded",Inter,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:-.02em;margin-top:8px;line-height:1.18}.hud small{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--dim)}.hud:before{content:"";position:absolute;left:14px;right:14px;top:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),var(--red),transparent)}.h1{left:4.2%;top:18%}.h2{right:4.6%;top:17%}.h3{right:5.6%;bottom:13%}.h4{left:5.2%;bottom:13%}
+    .bottom-strip{position:relative;z-index:6;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);background:rgba(2,3,6,.48)}.metric{padding:18px 20px;border-left:1px solid var(--line);min-height:98px}.metric:first-child{border-left:0}.metric small{display:block;color:var(--dim);text-transform:uppercase;letter-spacing:.16em;font-size:10px}.metric b{display:block;margin-top:10px;font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.03em;font-size:clamp(15px,1.5vw,22px);line-height:1.15}.section{position:relative;z-index:6;border-top:1px solid var(--line);padding:52px clamp(18px,5vw,72px);background:rgba(2,3,6,.72)}.section h2{font-family:"Archivo Expanded",Inter,sans-serif;font-size:clamp(34px,5vw,72px);letter-spacing:-.06em;line-height:.92;text-transform:uppercase;margin:0 0 16px}.section p{max-width:850px;color:var(--muted);line-height:1.8;margin:0}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:30px;background:var(--line);box-shadow:0 0 70px rgba(53,233,255,.055)}.card{min-height:250px;background:radial-gradient(circle at 78% 8%,rgba(53,233,255,.12),transparent 30%),radial-gradient(circle at 16% 95%,rgba(255,79,112,.08),transparent 28%),linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.025));padding:24px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:auto 0 0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--red));transform:scaleX(.18);transform-origin:left;transition:.25s}.card:hover:before{transform:scaleX(1)}.card small{font-size:10px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase}.card h3{font-family:"Archivo Expanded",Inter,sans-serif;text-transform:uppercase;letter-spacing:-.04em;line-height:1.05;margin:56px 0 12px;font-size:24px}.card p{font-size:14px}.closing{display:flex;align-items:center;justify-content:space-between;gap:22px;border-top:1px solid var(--line);padding:24px clamp(18px,5vw,72px);background:rgba(255,255,255,.035);position:relative;z-index:6}.closing span{font-size:11px;color:var(--dim);letter-spacing:.14em;text-transform:uppercase}.scanline{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(255,255,255,.065),transparent);height:180px;animation:scan 7s linear infinite;z-index:2;mix-blend-mode:screen}
+    @keyframes spin{to{transform:rotate(360deg)}}@keyframes slowTilt{0%,100%{transform:rotateX(58deg) rotateZ(-6deg) scale(.96)}50%{transform:rotateX(55deg) rotateZ(6deg) scale(1.02)}}@keyframes drift{from{transform:translate3d(0,0,0);opacity:.1}20%,80%{opacity:1}to{transform:translate3d(var(--dx),var(--dy),0);opacity:.05}}@keyframes scan{from{transform:translateY(-220px)}to{transform:translateY(calc(100vh + 220px))}}
+    @media (max-width:960px){.nav-actions a:nth-child(-n+2){display:none}.hero{min-height:760px}.energy-ring{width:920px;opacity:.84}.hud{display:none}.bottom-strip,.service-grid{grid-template-columns:1fr 1fr}.closing{display:grid}.hero h1{font-size:clamp(38px,10vw,82px)}}
+    @media (max-width:620px){.shell{width:calc(100% - 10px);margin:5px auto}.nav{padding:14px}.nav-actions a:not(.btn){display:none}.brand span{display:none}.hero{padding:60px 14px 42px;min-height:690px}.energy-ring{width:720px}.kicker{font-size:9px;line-height:1.8}.hero p{font-size:14px}.cta-row{display:grid}.bottom-strip,.service-grid{grid-template-columns:1fr}.metric{border-left:0;border-top:1px solid var(--line)}.section{padding:40px 18px}.closing{padding:22px 18px}}
+    @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.scanline{display:none}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="scanline" aria-hidden="true"></div>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top"><img src="AR_logo_transparent_dark.png" alt="Arzware logo"><span><b>Arzware</b> / interaction core</span></a>
+      <div class="nav-actions">
+        <a href="#systems">Systems</a>
+        <a href="#offer">Offer</a>
+        <a class="btn" href="hermes-inspired.html#booking">Book a call</a>
+      </div>
+    </nav>
+
+    <section id="top" class="hero" aria-label="Cinematic Arzware concept hero">
+      <div class="stars" id="stars" aria-hidden="true"></div>
+      <div class="core-wrap" aria-hidden="true">
+        <div class="energy-ring">
+          <div class="aura"></div>
+          <div class="ring-layer"></div>
+          <div class="ring-layer"></div>
+          <div class="ring-layer"></div>
+          <div class="wave"></div>
+        </div>
+      </div>
+
+      <div class="hud h1"><small>Input</small><b>Scattered DMs, calls, forms</b></div>
+      <div class="hud h2"><small>Core</small><b>Website + booking + CRM-lite</b></div>
+      <div class="hud h3"><small>Output</small><b>Clear follow-up rhythm</b></div>
+      <div class="hud h4"><small>Guardrail</small><b>AI-assisted, human-reviewed</b></div>
+
+      <div class="hero-content">
+        <div class="kicker">01 — Welcome to Arzware</div>
+        <h1>Technology that turns interaction into systems.</h1>
+        <p>We build premium websites and practical operating layers for growing businesses — booking flows, lead capture, CRM-lite trackers, automations, dashboards, and AI-assisted workflows that make the next step obvious.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="hermes-inspired.html#booking">Book a strategy call</a>
+          <a class="btn" href="#systems">See how it works</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom-strip" aria-label="Arzware proof points">
+      <div class="metric"><small>For</small><b>Clinics, restaurants, salons, schools, consultants, SMEs</b></div>
+      <div class="metric"><small>Fixes</small><b>Weak presence and messy lead flow</b></div>
+      <div class="metric"><small>Builds</small><b>Websites connected to operations</b></div>
+      <div class="metric"><small>Model</small><b>Fast, premium, human-reviewed systems</b></div>
+    </div>
+
+    <section class="section" id="systems">
+      <h2>Not just a pretty page. A working layer.</h2>
+      <p>The visual drama is only the surface. Under it, Arzware maps how a business gets attention, captures demand, follows up, books meetings, and keeps visibility over the work.</p>
+      <div class="service-grid">
+        <article class="card"><small>01 / Presence</small><h3>Premium websites</h3><p>Sharp landing pages and business websites built to create trust fast and move visitors toward action.</p></article>
+        <article class="card"><small>02 / Flow</small><h3>Booking + lead systems</h3><p>Contact forms, meeting requests, WhatsApp paths, reminders, and simple CRM-lite tracking.</p></article>
+        <article class="card"><small>03 / Ops</small><h3>AI-assisted workflows</h3><p>Automations, dashboards, and internal tools that reduce manual work without removing human judgment.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="offer">
+      <h2>Simple for the client. Powerful behind the scenes.</h2>
+      <p>This concept keeps the “wow” moment from the reference image, but makes it meaningful for Arzware: the glowing core represents customer interaction becoming organized business infrastructure.</p>
+    </section>
+
+    <div class="closing">
+      <span>Arzware interaction core / cinematic concept</span>
+      <a class="btn primary" href="hermes-inspired.html#booking">Book a call with us</a>
+    </div>
+  </main>
+
+  <script>
+    const stars = document.getElementById('stars');
+    const totalStars = window.matchMedia('(max-width: 620px)').matches ? 34 : 72;
+    for(let i=0;i<totalStars;i++){
+      const s = document.createElement('span');
+      s.className = 'star';
+      s.style.left = Math.random()*100 + '%';
+      s.style.top = Math.random()*100 + '%';
+      s.style.setProperty('--dx', (Math.random()*120 - 60) + 'px');
+      s.style.setProperty('--dy', (Math.random()*120 - 60) + 'px');
+      s.style.animationDuration = (7 + Math.random()*18) + 's';
+      s.style.animationDelay = (-Math.random()*18) + 's';
+      s.style.opacity = Math.random().toFixed(2);
+      stars.appendChild(s);
+    }
+  </script>
+</body>
+</html>
