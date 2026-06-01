@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Arzware is an AI-native software and automation studio building websites, internal systems, dashboards, and workflows for ambitious small teams." />
+  <title>Arzware — Software systems, engineered with intent</title>
+  <link rel="icon" type="image/png" href="AR_logo_transparent_dark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --black:#050505;
+      --black-2:#0b0b0a;
+      --paper:#f4efe5;
+      --ink:#f6f0e7;
+      --muted:#8d8780;
+      --muted-2:#b7afa4;
+      --line:rgba(246,240,231,.14);
+      --line-2:rgba(246,240,231,.28);
+      --gold:#d69136;
+      --gold-2:#ffbd64;
+      --cyan:#8ee9ff;
+      --green:#b7f3cd;
+      --danger:#ff816d;
+      --font:Geist,system-ui,-apple-system,Segoe UI,sans-serif;
+      --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+      --serif:'Instrument Serif',Georgia,serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--black)}
+    body{margin:0;font-family:var(--font);color:var(--ink);background:var(--black);overflow-x:hidden;text-rendering:geometricPrecision;-webkit-font-smoothing:antialiased}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(circle at 50% 8%,rgba(214,145,54,.16),transparent 34rem),radial-gradient(circle at 82% 22%,rgba(142,233,255,.08),transparent 30rem),linear-gradient(180deg,#050505,#090807 42%,#050505 80%)}
+    body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.045;background-image:url('data:image/svg+xml,%3Csvg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="256" height="256" filter="url(%23n)" opacity=".6"/%3E%3C/svg%3E');mix-blend-mode:screen}
+    a{color:inherit;text-decoration:none} button,input,textarea{font:inherit;color:inherit} img{max-width:100%;display:block}
+    .page{position:relative;z-index:2}.container{width:min(1200px,calc(100% - 48px));margin:0 auto}.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:12px}.gold{color:var(--gold)}.muted{color:var(--muted-2)}
+
+    .nav{position:fixed;z-index:30;top:0;left:0;right:0;padding:28px clamp(22px,4vw,58px);display:flex;align-items:center;justify-content:space-between;mix-blend-mode:difference;color:white;pointer-events:none}.nav > *{pointer-events:auto}.wordmark{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:700;letter-spacing:.14em;font-size:13px}.wordmark img{width:28px;height:28px;object-fit:contain;filter:brightness(1.6)}.nav a:last-child{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;border-bottom:1px solid currentColor;padding-bottom:5px}.nav a:last-child:hover{color:var(--gold-2)}
+
+    .hero{min-height:96vh;position:relative;display:grid;align-items:center;padding:128px 0 90px;overflow:hidden}.hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}.hero h1{font-size:clamp(72px,11vw,154px);line-height:.82;letter-spacing:-.09em;margin:0;max-width:930px}.hero .thin{display:block;font-weight:300;color:#9d968e}.hero .strong{display:block;font-weight:900;color:var(--ink)}.hero-copy{position:relative;z-index:3}.hero-copy p{margin:26px 0 0;max-width:620px;color:#bfb7ad;font-size:clamp(17px,1.45vw,21px);line-height:1.6}.hero-meta{display:flex;gap:32px;flex-wrap:wrap;margin-top:34px;color:#8d8780}.hero-meta span{display:block;color:var(--gold);margin-bottom:5px}.side-word{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:clamp(78px,13vw,188px);line-height:.8;letter-spacing:-.07em;text-align:right;margin-right:2vw;text-shadow:0 0 54px rgba(214,145,54,.18)}
+    .signal{position:absolute;left:50%;top:47%;width:min(58vw,760px);height:300px;transform:translate(-38%,-50%) rotate(-16deg);z-index:2;pointer-events:none;filter:drop-shadow(0 0 30px rgba(214,145,54,.24))}.signal svg{width:100%;height:100%;overflow:visible}.signal path.core{stroke:url(#signalGradient);stroke-width:12;stroke-linecap:round;fill:none;filter:url(#glow);stroke-dasharray:1200;animation:draw 4.8s cubic-bezier(.2,.8,.2,1) both}.signal path.thin{stroke:rgba(246,240,231,.24);stroke-width:1.4;fill:none}.node{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gold-2);box-shadow:0 0 28px var(--gold);animation:pulse 3s ease-in-out infinite}.node.n1{left:17%;top:36%}.node.n2{left:53%;top:48%;animation-delay:.5s}.node.n3{right:18%;top:30%;animation-delay:1s}.hero-stamp{position:absolute;right:5vw;bottom:14vh;color:#77706a;text-align:right}.hero-stamp b{display:block;color:var(--ink);font-size:clamp(28px,3vw,48px);letter-spacing:-.06em;margin-bottom:8px}.scroll-line{position:absolute;left:clamp(22px,4vw,58px);bottom:58px;width:1px;height:120px;background:linear-gradient(transparent,var(--gold),transparent)}
+
+    .intro{padding:92px 0 110px}.intro-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:54px;align-items:start}.intro-label{font-family:var(--serif);font-size:clamp(42px,5vw,82px);line-height:.9;color:#8f887e;letter-spacing:-.055em}.intro h2{font-size:clamp(38px,5.2vw,78px);line-height:1.04;letter-spacing:-.065em;margin:0 0 28px;max-width:900px}.intro p{font-size:18px;line-height:1.75;color:#bcb3a9;max-width:780px;margin:0 0 18px}.text-link{display:inline-flex;gap:12px;align-items:center;margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}.text-link:before{content:"";width:46px;height:1px;background:var(--gold)}
+
+    .work{min-height:78vh;padding:88px 0 104px;position:relative}.work:before{content:"SELECTED SYSTEMS";position:absolute;top:46px;left:clamp(24px,5vw,70px);font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--gold)}.work-grid{display:grid;grid-template-columns:.32fr 1fr .42fr;gap:42px;align-items:end;border-top:1px solid var(--line);padding-top:74px}.count{font-family:var(--mono);font-size:14px;color:#807970}.count strong{color:var(--gold);font-size:42px;letter-spacing:-.08em}.project h3{font-family:var(--serif);font-size:clamp(56px,8vw,118px);font-weight:400;line-height:.86;color:#978f86;letter-spacing:-.06em;margin:0 0 24px}.project h2{font-size:clamp(34px,4.6vw,72px);line-height:.96;letter-spacing:-.07em;margin:0 0 22px;max-width:780px}.rule{width:120px;height:2px;background:var(--gold);margin:0 0 26px}.project p{font-size:18px;line-height:1.7;color:#bdb4aa;max-width:680px;margin:0}.tags{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.tags span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#958d83}.visit{display:inline-flex;align-items:center;gap:18px;margin-top:38px;border:1px solid var(--line-2);border-left-color:var(--gold);padding:16px 22px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.visit:hover{background:rgba(214,145,54,.08)}.metric{border:1px solid var(--line);padding:28px;border-radius:2px;background:rgba(255,255,255,.025)}.metric b{font-size:clamp(58px,8vw,110px);letter-spacing:-.09em;color:var(--ink);display:block;line-height:.9}.metric span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#8f877e;text-transform:uppercase;line-height:1.6}
+
+    .paper{background:var(--paper);color:#10100f;min-height:62vh;display:grid;align-items:center;padding:84px 0}.paper .container{display:grid;grid-template-columns:.82fr 1.18fr;gap:60px;align-items:center}.paper h2{font-size:clamp(46px,7vw,104px);line-height:.9;letter-spacing:-.075em;margin:0}.paper p{font-size:clamp(20px,2.3vw,34px);line-height:1.28;letter-spacing:-.04em;margin:0;color:#292621}.paper .mono{color:#8c5b20}.systems-list{display:grid;gap:18px;margin-top:32px}.systems-list div{display:grid;grid-template-columns:130px 1fr;gap:18px;border-top:1px solid rgba(0,0,0,.18);padding-top:17px}.systems-list b{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#9c641e}.systems-list span{color:#3b352f;line-height:1.55}
+
+    .services{padding:104px 0}.service-head{display:grid;grid-template-columns:.45fr 1fr;gap:52px;align-items:end;margin-bottom:60px}.service-head h2{font-size:clamp(54px,8vw,120px);line-height:.86;letter-spacing:-.085em;margin:0}.service-head p{font-size:20px;line-height:1.65;color:#b8afa5;margin:0;max-width:640px}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}.service{min-height:330px;background:#070707;padding:26px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s ease}.service:hover{background:#0e0d0c}.service small{font-family:var(--mono);letter-spacing:.14em;color:var(--gold);font-size:11px}.service h3{font-size:30px;line-height:1;letter-spacing:-.06em;margin:40px 0 16px}.service p{color:#aaa199;line-height:1.6;margin:0}.service em{font-style:normal;color:#6f6861;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+    .contact{padding:104px 0 70px}.contact-grid{display:grid;grid-template-columns:1fr .82fr;gap:70px;align-items:start}.contact h2{font-size:clamp(56px,8vw,122px);line-height:.86;letter-spacing:-.085em;margin:0 0 40px}.contact h2 span{display:block;font-family:var(--serif);font-style:italic;color:var(--gold);font-weight:400}.form{display:grid;gap:28px}.field{border-bottom:1px solid var(--line-2);padding-bottom:13px}.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8c847b;margin-bottom:8px}.field input,.field textarea{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:19px;padding:8px 0}.field textarea{min-height:98px;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:#5e5852}.send{margin-top:8px;border:0;background:transparent;color:var(--gold);font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;font-size:12px;display:inline-flex;gap:14px;align-items:center;cursor:pointer}.send:before{content:"";width:58px;height:1px;background:var(--gold)}.contact-side{padding-top:120px}.contact-side .block{border-top:1px solid var(--line);padding:20px 0 24px}.contact-side b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#8b837b;margin-bottom:10px}.contact-side a,.contact-side span{font-size:20px;color:var(--ink);line-height:1.5}.footer{border-top:1px solid var(--line);padding:28px 0;display:flex;justify-content:space-between;gap:18px;color:#77706a}.footer strong{color:var(--ink);font-family:var(--mono);letter-spacing:.14em}.footer span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}
+    @keyframes draw{from{stroke-dashoffset:1200}to{stroke-dashoffset:0}}@keyframes pulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.5);opacity:1}}
+    @media(max-width:980px){.hero{min-height:auto;padding-top:120px}.hero-grid,.intro-grid,.work-grid,.paper .container,.service-head,.contact-grid{grid-template-columns:1fr}.side-word{text-align:left;margin:40px 0 0}.signal{opacity:.55;transform:translate(-50%,-30%) rotate(-14deg);width:90vw}.work-grid{gap:32px;padding-top:80px}.metric{max-width:360px}.service-grid{grid-template-columns:1fr}.contact-side{padding-top:20px}.paper{padding:90px 0}.systems-list div{grid-template-columns:1fr}.nav{padding:22px}.nav .wordmark span{display:none}}
+    @media(max-width:620px){.container{width:min(100% - 28px,1200px)}.hero h1{font-size:64px}.hero-meta{gap:18px}.intro,.services,.contact{padding:82px 0}.work{padding:88px 0}.project h3{font-size:64px}.project h2{font-size:38px}.paper h2{font-size:56px}.footer{display:grid}.nav{mix-blend-mode:normal;background:rgba(5,5,5,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="wordmark" href="#top"><img src="AR_logo_transparent_dark.png" alt=""><span>ARZWARE</span></a>
+      <a href="#contact">Start a project</a>
+    </nav>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <h1><span class="thin">Software</span><span class="strong">systems studio.</span></h1>
+            <p>Arzware designs and builds the digital layers behind growing teams: websites, automation, dashboards, CRM-lite tools, AI workflows, and internal products that feel effortless.</p>
+            <div class="hero-meta mono">
+              <div><span>ARZWARE EST. 2026</span>AI-native engineering</div>
+              <div><span>REMOTE-FIRST</span>Lebanon / worldwide</div>
+            </div>
+          </div>
+          <div class="side-word reveal">intent</div>
+        </div>
+        <div class="signal" aria-hidden="true">
+          <svg viewBox="0 0 900 300" role="img">
+            <defs>
+              <linearGradient id="signalGradient" x1="0" x2="1">
+                <stop offset="0" stop-color="#5ddfff" stop-opacity=".28" />
+                <stop offset=".42" stop-color="#ffbd64" />
+                <stop offset="1" stop-color="#f7efe2" stop-opacity=".55" />
+              </linearGradient>
+              <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="10" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <path class="thin" d="M20 182 C190 62 282 82 396 156 S624 262 846 66" />
+            <path class="thin" d="M48 222 C236 124 318 128 442 190 S650 236 876 120" />
+            <path class="core" d="M16 190 C142 74 276 66 394 145 C514 226 610 254 750 122 C790 84 830 64 884 58" />
+          </svg>
+          <i class="node n1"></i><i class="node n2"></i><i class="node n3"></i>
+        </div>
+        <div class="hero-stamp mono"><b>01</b>engineered until simple</div>
+        <div class="scroll-line" aria-hidden="true"></div>
+      </section>
+
+      <section class="intro">
+        <div class="container intro-grid">
+          <p class="intro-label reveal">Let's build<br>systems that last</p>
+          <div class="reveal">
+            <h2>Great software work is not about shipping more screens. It is about understanding where your business leaks time, attention, and trust.</h2>
+            <p>Most teams do not need a massive platform on day one. They need the right first system: the one that captures requests, follows up automatically, shows the truth clearly, and gives the team back its focus.</p>
+            <p>Arzware builds that layer with strategy, design, engineering, and AI-assisted workflows working together from the first conversation.</p>
+            <a class="text-link" href="#work">How we work</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="work" id="work">
+        <div class="container work-grid reveal">
+          <div class="count mono"><strong>01</strong><br>/ 03</div>
+          <article class="project">
+            <h3>LeadOps</h3>
+            <h2>Turned scattered client requests into one clean sales pipeline.</h2>
+            <div class="rule"></div>
+            <p>A fast website form, booking path, CRM-lite dashboard, reminders, and weekly summaries. Built for small teams that currently run follow-up through WhatsApp, spreadsheets, and memory.</p>
+            <div class="tags"><span>Website</span><span>CRM-lite</span><span>Automation</span><span>AI workflows</span></div>
+            <a class="visit" href="#contact">Discuss this build →</a>
+          </article>
+          <aside class="metric"><b>3×</b><span>clearer follow-up without adding admin work</span></aside>
+        </div>
+      </section>
+
+      <section class="paper">
+        <div class="container">
+          <div class="reveal"><p class="mono gold">What we build</p><h2>Invisible layers that make the visible product feel calm.</h2></div>
+          <div class="reveal">
+            <p>We connect the parts that usually stay disconnected: websites, forms, databases, payments, dashboards, notifications, documents, and AI tools.</p>
+            <div class="systems-list">
+              <div><b>Websites</b><span>Premium client-facing pages, booking paths, landing pages, product demos, and conversion-focused flows.</span></div>
+              <div><b>Systems</b><span>Internal dashboards, CRM-lite tools, project trackers, reporting views, and operational portals.</span></div>
+              <div><b>Automation</b><span>Follow-ups, reminders, summaries, data cleanup, document workflows, and AI-assisted business processes.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="services">
+        <div class="container">
+          <div class="service-head reveal">
+            <h2>Built with restraint.</h2>
+            <p>Every Arzware build starts from one operational problem and ends with a usable system your team can actually run.</p>
+          </div>
+          <div class="service-grid reveal">
+            <article class="service"><small>01</small><div><h3>Strategy before screens.</h3><p>We map the workflow, the decision points, and the handoffs before touching the interface.</p></div><em>Discovery</em></article>
+            <article class="service"><small>02</small><div><h3>Design that explains itself.</h3><p>Clean pages, clear forms, direct CTAs, and interfaces that reduce confusion instead of decorating it.</p></div><em>Design</em></article>
+            <article class="service"><small>03</small><div><h3>Engineering that stays useful.</h3><p>Practical code, simple deployment, maintainable automations, and systems that can grow in stages.</p></div><em>Build</em></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container contact-grid">
+          <div class="reveal">
+            <p class="mono gold">Contact</p>
+            <h2>Tell us what <span>you're building.</span></h2>
+            <form class="form" onsubmit="event.preventDefault(); const d=new FormData(this); location.href='mailto:arzware.lb@gmail.com?subject=Arzware project inquiry&body='+encodeURIComponent('Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nProject: '+d.get('project'));">
+              <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Adam" required></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
+              <div class="field"><label for="project">Project</label><textarea id="project" name="project" placeholder="Website, system, automation, dashboard..." required></textarea></div>
+              <button class="send" type="submit">Send brief →</button>
+            </form>
+          </div>
+          <aside class="contact-side reveal">
+            <div class="block"><b>Write directly</b><a href="mailto:arzware.lb@gmail.com">arzware.lb@gmail.com</a></div>
+            <div class="block"><b>Studio</b><span>Lebanon<br>Remote-first · worldwide</span></div>
+            <div class="block"><b>Focus</b><span>Websites · Automations · Dashboards · AI workflows</span></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <strong>ARZWARE</strong>
+      <span>Software systems studio · © 2026</span>
+    </footer>
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => el.classList.add('visible'));
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); } });
+      }, { threshold: .12, rootMargin: '0px 0px -80px 0px' });
+      reveals.forEach(el => io.observe(el));
+    }
+  </script>
+</body>
+</html>
